@@ -1,12 +1,20 @@
-public abstract class Cella
+public class Cella
 {
-    private String val;
-    public Cella(String val)
+    private String param;
+    public Cella(String content)
     {
-        this.val = val;
+        this.param = content;
     }
-    public String getVal()
+    public Cella()
     {
-        return val;
+        this("");
+    }
+    public String getParam()
+    {
+        return param;
+    } 
+    public void setParam(String val)
+    {
+        param = val;
     }
 }
