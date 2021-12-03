@@ -1,8 +1,9 @@
 import javax.swing.JPanel;
 import java.awt.event.*; 
 import javax.swing.*;
+import java.awt.Dimension;
 public class TablePanel extends JPanel
-{
+{ // devo creare un JScrollPane contenente la tabella.
     private Tabella t;
     public TablePanel()
     {
@@ -10,6 +11,7 @@ public class TablePanel extends JPanel
         t = new Tabella();
         MyTableModel dataModel = new MyTableModel(t);
         JTable t = new JTable(dataModel);
-        add(t);
+	t.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+	add(t);
     }
 }

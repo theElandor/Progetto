@@ -1,3 +1,4 @@
+
 import java.util.*;
 /**
  * Matrice che contiene le celle.
@@ -6,7 +7,7 @@ import java.util.*;
 public class Tabella
 {
     private int rows = 50;
-    private int cols = 20;
+    private int cols = 40;
     private String debug = "";
     private ArrayList<ArrayList<Cella>> mat;
     Cella vuota;
@@ -18,14 +19,7 @@ public class Tabella
             ArrayList<Cella> singleList = new ArrayList<Cella>();
             for(int j = 0 ; j < cols ; j++)
             {
-                if(i == 0)
-                {
-                   vuota = new Cella(Integer.toString(j));
-                }
-                else
-                {
-                    vuota = new Cella(debug);
-                }
+                vuota=new Cella(debug);
                 singleList.add(vuota);
             }
             mat.add(singleList);

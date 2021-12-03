@@ -29,6 +29,10 @@ public class MyTableModel extends AbstractTableModel
     {
         return Integer.toString(col+1);
     }
+    public String getRowName(int row)
+    {
+	return Integer.toString(row+1);
+    }
     public boolean isCellEditable(int row, int col)
     {
         return true;

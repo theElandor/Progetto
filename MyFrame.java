@@ -6,6 +6,8 @@ public class MyFrame extends JFrame
 {
     private TablePanel p;
     private TopMenuPanel m;
+    private TopMenuPanel b;
+    private JScrollPane pane;
     public MyFrame()
     {
         this("");
@@ -17,8 +19,11 @@ public class MyFrame extends JFrame
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         p = new TablePanel();
         m = new TopMenuPanel();
+	b = new TopMenuPanel();
+	pane = new JScrollPane(p);
         this.setLayout(new BorderLayout());
-        this.add(p, BorderLayout.CENTER);
+        this.add(pane, BorderLayout.CENTER);
         this.add(m, BorderLayout.NORTH);
+	this.add(b, BorderLayout.SOUTH);
     }
 }
