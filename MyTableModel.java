@@ -1,3 +1,7 @@
+/**
+ * Di base non creo tutte le celle subito, quando viene inserito un
+ * valore, creo la cella adatta identificando quel valore.
+ */
 import javax.swing.table.AbstractTableModel;
 public class MyTableModel extends AbstractTableModel
 {
@@ -22,10 +26,15 @@ public class MyTableModel extends AbstractTableModel
         return(t.getRows());
     }
     public Object getValueAt(int row, int col)
-    {   // devo restituire un oggetto
-        // il valore dipende dalla colonna in cui sono
-        
-        return t.getCella(row, col).getParam();
+    {
+        Cella temp;
+        temp = t.getCella(row,col);
+        if(temp == null)
+        {
+            return "";
+        }
+        return temp.getParam();
+
     }
     public String getColumnName(int col)
     {
@@ -43,6 +52,12 @@ public class MyTableModel extends AbstractTableModel
     public void setValueAt(Object aValue, int row, int col)   
     {
         Cella nuova = t.getCella(row, col);
-        nuova.setParam((String) aValue);
+        if(nuova == null)
+        {
+            nuova = new Cella((String) aValue);
+            t.AddCellAt(row,col,nuova);
+        }
+        else
+            nuova.setParam((String) aValue);
     }
 }
