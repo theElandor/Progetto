@@ -1,6 +1,7 @@
 import javax.swing.table.AbstractTableModel;
 public class MyTableModel extends AbstractTableModel
 {
+    // setValueAt(Object , int, int) per settare il valore di una cella.
     private Tabella t;
     // in qualche modo devo poter vedere la
     // struttura dati. Provo a passarla con il costruttore
