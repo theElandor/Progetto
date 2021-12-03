@@ -1,6 +1,7 @@
 import javax.swing.table.AbstractTableModel;
 public class MyTableModel extends AbstractTableModel
 {
+    char[] alphabet = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     // setValueAt(Object , int, int) per settare il valore di una cella.
     private Tabella t;
     // in qualche modo devo poter vedere la
@@ -28,7 +29,7 @@ public class MyTableModel extends AbstractTableModel
     }
     public String getColumnName(int col)
     {
-        return Integer.toString(col+1);
+        return Character.toString(Character.toUpperCase(alphabet[col]));
     }
     public String getRowName(int row)
     {
@@ -38,5 +39,10 @@ public class MyTableModel extends AbstractTableModel
     {
         return true;
     }
-
+    @Override
+    public void setValueAt(Object aValue, int row, int col)   
+    {
+        Cella nuova = t.getCella(row, col);
+        nuova.setParam((String) aValue);
+    }
 }

@@ -16,6 +16,7 @@ public class TablePanel extends JPanel
         p = new JScrollPane(t);
         this.setLayout(new BorderLayout());
         this.add(p, BorderLayout.CENTER);
+        t.getTableHeader().setResizingAllowed(true);
         // da mettere CENTER altrimenti ci sono problemi con
         // il resize
     }
