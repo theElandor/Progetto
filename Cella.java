@@ -1,10 +1,3 @@
-/*
-* Ragionamento:
-* public abstract class Cella
-*   -->
-*   -->
-*
-* */
 
 public class Cella
 {
@@ -12,7 +5,7 @@ public class Cella
     public Cella(String content)
     {
         this.param = content;
-        System.out.println("Creazione di una cella.");
+        System.out.print("Creazione di una cella ");
     }
     public Cella()
     {
