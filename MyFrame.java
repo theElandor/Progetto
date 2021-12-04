@@ -5,7 +5,6 @@ import javax.swing.border.Border;
 public class MyFrame extends JFrame
 {
     private BigPanel p;
-   //private JScrollPane pane;
     public MyFrame()
     {
         this("");
