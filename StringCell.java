@@ -4,5 +4,6 @@ public class StringCell extends Cell
     public StringCell(String param)
     {
         super();
+        System.out.println("Creazione cella string");
     }
 }

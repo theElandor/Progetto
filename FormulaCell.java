@@ -3,6 +3,7 @@ public class FormulaCell extends DynamicCell
     public FormulaCell(String param)
     {
         super(param);
+        System.out.println("Creazione cella formula");
     }
     @Override
     /**

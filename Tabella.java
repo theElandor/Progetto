@@ -8,19 +8,19 @@ public class Tabella
 {
     private int rows = 50;
     private int cols = 27;
-    private ArrayList<ArrayList<Cella>> mat;
+    private ArrayList<ArrayList<Cell>> mat;
     public Tabella()
     {
-        mat = new ArrayList<ArrayList<Cella>>(50);
+        mat = new ArrayList<ArrayList<Cell>>(50);
         for(int i = 0 ; i < rows; i++)
         {
-            ArrayList<Cella> singleList = new ArrayList<Cella>(26);
+            ArrayList<Cell> singleList = new ArrayList<Cell>(26);
             for(int j = 0 ; j < cols; j++)
             {
                 // domanda: perchè se non inizializzo tutte le caselle
                 // con delle celle nulle (senza allocare memoria quindi)
                 // mi va in IndexOutOfBound ? IDK.
-                Cella nuova = null;
+                Cell nuova = null;
                 singleList.add(nuova);
             }
             mat.add(singleList);
@@ -30,11 +30,11 @@ public class Tabella
      * Funzione che crea una cella con un determinato contenuto
      * alla posizione [row, col]
      */
-    public void AddCellAt(int row, int col, Cella temp)
+    public void AddCellAt(int row, int col, Cell temp)
     {
         mat.get(row).add(col, temp);
     }
-    public Cella getCella(int i, int j)
+    public Cell getCella(int i, int j)
     {
         try
         {
