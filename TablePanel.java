@@ -12,12 +12,11 @@ public class TablePanel extends JPanel
         t = new Tabella();
         MyTableModel dataModel = new MyTableModel(t);
         JTable t = new JTable(dataModel);
-	    t.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        p = new JScrollPane(t);
+        FrozenTablePane frozen = new FrozenTablePane(t,1);
+	    //frozen.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        //p = new JScrollPane(frozen);
         this.setLayout(new BorderLayout());
-        this.add(p, BorderLayout.CENTER);
-        t.getTableHeader().setResizingAllowed(true);
-        // da mettere CENTER altrimenti ci sono problemi con
-        // il resize
+        this.add(frozen, BorderLayout.CENTER);
+        //frozen.getTableHeader().setResizingAllowed(true);
     }
 }

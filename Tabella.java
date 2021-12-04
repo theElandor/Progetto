@@ -7,7 +7,7 @@ import java.util.*;
 public class Tabella
 {
     private int rows = 50;
-    private int cols = 26;
+    private int cols = 27;
     private ArrayList<ArrayList<Cella>> mat;
     public Tabella()
     {

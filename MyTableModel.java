@@ -5,7 +5,9 @@
 import javax.swing.table.AbstractTableModel;
 public class MyTableModel extends AbstractTableModel
 {
-    char[] alphabet = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    // sarebbe meglio usare la codifica ASCII
+    // da cambiare in futuro.
+    char[] alphabet = {'X','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     // setValueAt(Object , int, int) per settare il valore di una cella.
     private Tabella t;
     // in qualche modo devo poter vedere la
@@ -27,14 +29,20 @@ public class MyTableModel extends AbstractTableModel
     }
     public Object getValueAt(int row, int col)
     {
-        Cella temp;
-        temp = t.getCella(row,col);
-        if(temp == null)
+        if(col == 0)
         {
-            return "";
+            return Integer.toString(row+1);
         }
-        return temp.getParam();
-
+        else
+        {
+            Cella temp;
+            temp = t.getCella(row,col);
+            if(temp == null)
+            {
+                return "";
+            }
+            return temp.getParam();
+        }
     }
     public String getColumnName(int col)
     {
