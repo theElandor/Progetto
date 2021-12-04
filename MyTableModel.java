@@ -59,26 +59,20 @@ public class MyTableModel extends AbstractTableModel
     @Override
     public void setValueAt(Object aValue, int row, int col)   
     {
-        Cell temp = t.getCella(row, col);
-        if(temp == null)
+        Cell temp = new Cell((String) aValue);
+        int job = temp.SpecializeCell();
+        switch(job)
         {
-            temp = new Cell((String) aValue);
-            int job = temp.SpecializeCell();
-            switch(job)
-            {
-                case 1:
-                    temp = new StringCell((String) aValue);
-                    break;
-                case 2:
-                    temp = new IntCell((String) aValue);
-                    break;
-                case 3:
-                    temp = new FormulaCell((String) aValue);
-                    break;
-            }
-            t.AddCellAt(row,col,temp);
+            case 1:
+                temp = new StringCell((String) aValue);
+                break;
+            case 2:
+                temp = new IntCell((String) aValue);
+                break;
+            case 3:
+                temp = new FormulaCell((String) aValue);
+                break;
         }
-        else
-            temp.setParam((String) aValue);
+        t.AddCellAt(row,col,temp);
     }
 }
