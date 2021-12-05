@@ -41,7 +41,7 @@ public class MyTableModel extends AbstractTableModel
             {
                 return "";
             }
-            return temp.getParam();
+            return temp.getRenderedValue();
         }
     }
     public String getColumnName(int col)
@@ -63,9 +63,6 @@ public class MyTableModel extends AbstractTableModel
         int job = temp.SpecializeCell();
         switch(job)
         {
-            case 1:
-                temp = new StringCell((String) aValue);
-                break;
             case 2:
                 temp = new IntCell((String) aValue);
                 break;

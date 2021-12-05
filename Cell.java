@@ -1,26 +1,26 @@
+import javax.naming.event.ObjectChangeListener;
+
 public class Cell
 {
-    protected String param;
+    protected String raw; // raw data
     public Cell()
     {
         this("");
     }
-    public Cell(String param)
+    public Cell(String raw)
     {
-        this.param = param;
-    }
-    /*
-    * Getter*/
-    public String getParam()
-    {
-        return param;
+        this.raw = raw;
     }
     /**
-     * Setter*/
-   public void setParam(String param)
-   {
-       this.param = param;
-   }
+     * Nel caso delle celle generiche la funzione
+     * getRenderedValue ritorna semplicemente 
+     * la stringa inserita dall'utente. 
+     * @return
+     */
+    public Object getRenderedValue()
+    {
+        return raw;
+    }
    /*
    * Metodo che ritorna:
    * 1) Se la cella deve specializzarsi in StringCell
@@ -30,11 +30,11 @@ public class Cell
    {
        int return_value;
        try
-       {return_value = Integer.parseInt(param);
+       {return_value = Integer.parseInt(raw);
            return_value = 2;}
        catch (NumberFormatException e)
        {
-           if(Character.compare(param.charAt(0), '=') == 0)
+           if(Character.compare(raw.charAt(0), '=') == 0)
                return_value = 3;
            else
                return_value = 1;

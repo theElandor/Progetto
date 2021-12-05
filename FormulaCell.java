@@ -1,17 +1,16 @@
-public class FormulaCell extends DynamicCell
+public class FormulaCell extends Cell
 {
-    public FormulaCell(String param)
+    private int value;
+    public FormulaCell(String raw)
     {
-        super(param);
+        super(raw);
         System.out.println("Creazione cella formula");
     }
     @Override
-    /**
-     * Questo metodo deve contenere la funzione che calcola
-     * il valore da assegnare alla cella.
-     */
-    public void RenderCell()
+    public Integer getRenderedValue()
     {
+        // da modificare
         value = 100;
+        return value;
     }
 }

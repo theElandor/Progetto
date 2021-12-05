@@ -1,13 +1,15 @@
-public class IntCell extends DynamicCell
+public class IntCell extends Cell
 {
+    private int value;
     public IntCell(String param)
     {
         super(param);
         System.out.println("Creazione cella int");
+        value = Integer.parseInt(raw);
     }
     @Override
-    public void RenderCell()
+    public Integer getRenderedValue()
     {
-        value = Integer.parseInt(this.getParam());
+        return value;
     }
 }
