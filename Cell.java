@@ -17,7 +17,7 @@ public class Cell
      * la stringa inserita dall'utente. 
      * @return
      */
-    public Object getRenderedValue()
+    public String getRenderedValue()
     {
         return raw;
     }

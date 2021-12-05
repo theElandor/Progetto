@@ -7,7 +7,7 @@ public class MyTableModel extends AbstractTableModel
 {
     // sarebbe meglio usare la codifica ASCII
     // da cambiare in futuro.
-    char[] alphabet = {'X','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    char[] alphabet = {' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     // setValueAt(Object , int, int) per settare il valore di una cella.
     private Tabella t;
     // in qualche modo devo poter vedere la
@@ -41,7 +41,7 @@ public class MyTableModel extends AbstractTableModel
             {
                 return "";
             }
-            return temp.getRenderedValue();
+                return temp.getRenderedValue();
         }
     }
     public String getColumnName(int col)
@@ -67,7 +67,7 @@ public class MyTableModel extends AbstractTableModel
                 temp = new IntCell((String) aValue);
                 break;
             case 3:
-                temp = new FormulaCell((String) aValue);
+                temp = new FormulaCell((String) aValue,t);
                 break;
         }
         t.AddCellAt(row,col,temp);

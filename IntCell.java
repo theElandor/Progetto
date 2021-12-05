@@ -1,14 +1,18 @@
 public class IntCell extends Cell
 {
     private int value;
-    public IntCell(String param)
+    public IntCell(String raw)
     {
-        super(param);
+        super(raw);
         System.out.println("Creazione cella int");
-        value = Integer.parseInt(raw);
     }
     @Override
-    public Integer getRenderedValue()
+    public String getRenderedValue()
+    {
+        value = Integer.parseInt(raw);
+        return raw;
+    }
+    public Integer getValue()
     {
         return value;
     }
