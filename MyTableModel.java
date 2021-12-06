@@ -2,6 +2,8 @@
  * Di base non creo tutte le celle subito, quando viene inserito un
  * valore, creo la cella adatta identificando quel valore.
  */
+import com.sun.jdi.Value;
+
 import javax.swing.table.AbstractTableModel;
 public class MyTableModel extends AbstractTableModel
 {
@@ -10,11 +12,13 @@ public class MyTableModel extends AbstractTableModel
     char[] alphabet = {' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     // setValueAt(Object , int, int) per settare il valore di una cella.
     private Tabella t;
+    private ValueTable v;
     // in qualche modo devo poter vedere la
     // struttura dati. Provo a passarla con il costruttore
     public MyTableModel(Tabella t)
     {
         this.t = t;
+        v = new ValueTable();
     }
     public int getColumnCount()
     {
@@ -60,14 +64,19 @@ public class MyTableModel extends AbstractTableModel
     public void setValueAt(Object aValue, int row, int col)   
     {
         Cell temp = new Cell((String) aValue);
+        // o qui o nel costruttore devo chiamare
+        // temp.resetTableValue(row, col);
+        // a questo punto ha piu senso farlo nel costruttore.
+        // Altrimenti se modifico una cella che prima conteneva
+        // già un valore, questo non viene modificato.
         int job = temp.SpecializeCell();
         switch(job)
         {
             case 2:
-                temp = new IntCell((String) aValue);
+                temp = new IntCell((String) aValue,v, row, col);
                 break;
             case 3:
-                temp = new FormulaCell((String) aValue,t);
+                temp = new FormulaCell((String) aValue);
                 break;
         }
         t.AddCellAt(row,col,temp);
