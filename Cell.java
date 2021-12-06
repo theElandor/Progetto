@@ -3,13 +3,15 @@ import javax.naming.event.ObjectChangeListener;
 public class Cell
 {
     protected String raw; // raw data
-    public Cell()
+    private ValueTable v;
+    private int row, col;
+    public Cell(String raw, ValueTable v, int  row, int col)
     {
-        this("");
-    }
-    public Cell(String raw)
-    {
+        this.v = v;
         this.raw = raw;
+        this.row = row;
+        this.col = col;
+        resetValueInTable();
     }
     /**
      * Nel caso delle celle generiche la funzione
@@ -43,5 +45,15 @@ public class Cell
    }
     public String getCharForNumber(int i) {
         return i > 0 && i < 27 ? String.valueOf((char)(i + 64)) : null;
+    }
+    /**
+     * Metodo per togliere dalla tabella contenente i valori numerici
+     * eventuali valori pre-memorizzati.*/
+    public void resetValueInTable()
+    {
+        String col = getCharForNumber(this.col);// devo trasformarla
+        String row = Integer.toString(this.row);
+        String result = col+row;
+        v.remove(col);
     }
 }

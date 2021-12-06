@@ -63,7 +63,7 @@ public class MyTableModel extends AbstractTableModel
     @Override
     public void setValueAt(Object aValue, int row, int col)   
     {
-        Cell temp = new Cell((String) aValue);
+        Cell temp = new Cell((String) aValue, v, row, col);
         // o qui o nel costruttore devo chiamare
         // temp.resetTableValue(row, col);
         // a questo punto ha piu senso farlo nel costruttore.
@@ -76,7 +76,7 @@ public class MyTableModel extends AbstractTableModel
                 temp = new IntCell((String) aValue,v, row, col);
                 break;
             case 3:
-                temp = new FormulaCell((String) aValue);
+                temp = new FormulaCell((String) aValue,v,row,col);
                 break;
         }
         t.AddCellAt(row,col,temp);
