@@ -13,9 +13,9 @@ public class ValueTable {
         m.put(key, value);
         debug();
     }
-    public Object get(String key)
+    public Integer get(String key)
     {
-        return m.get(key);
+        return (Integer)m.get(key);
     }
     public void remove(String key)
     {

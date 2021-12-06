@@ -23,14 +23,13 @@ public class FormulaCell extends Cell
         // grazie ad un primo controllo fatto dalla funzione
         // specialize, so già che il primo carattere è un uguale.
         if(raw.length() < 6 || raw.length() > 8)
-            return "Syntax Error";
+            return "Number of characters out of bound.";
         else
-            if(ValidateSyntax() == true)
-                return "Valida";
-            else
-                return "Syntax Error";
+        {
+            return getCellValue();
+        }
     }
-    public boolean ValidateSyntax()
+    public String getCellValue()
     {
         int OperatorIndex  = -1;
         for(int i = 0 ; i < raw.length(); i++)
@@ -48,7 +47,28 @@ public class FormulaCell extends Cell
         Pattern p = Pattern.compile("[A-Z][1-9]{1,2}");
         Matcher first_part = p.matcher(first);
         Matcher second_part= p.matcher(second);
-        return (first_part.matches() && second_part.matches());
+        if(!first_part.matches() && second_part.matches())
+            return "InvalidSyntax";
+        else
+        { // controllo le caselle se contengono valori validi
+            if(v.get(first) == null || v.get(second) == null)
+                return "NullValueFound";
+        }
+        int result = 0;
+        if(raw.charAt(OperatorIndex) == '+')
+        {
+            result = v.get(first)+v.get(second);
+        }
+        if(raw.charAt(OperatorIndex) == '-')
+        {
+            result =  v.get(first)-v.get(second);
+        }
+        if(raw.charAt(OperatorIndex) == '*')
+        {
+            result =  v.get(first)*v.get(second);
+        }
+        v.put(getCharForNumber(col)+(row+1), result);
+        return Integer.toString(result);
     }
     public Integer getValue()
     {

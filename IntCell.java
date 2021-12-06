@@ -6,7 +6,7 @@ public class IntCell extends Cell
         super(raw, v, row, col);
         System.out.println("Creazione cella int");
         value = Integer.parseInt(raw);
-        v.put(getCharForNumber(col), value);
+        v.put(getCharForNumber(col)+(row+1), value);
     }
     @Override
     public String getRenderedValue()

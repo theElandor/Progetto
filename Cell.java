@@ -3,8 +3,8 @@ import javax.naming.event.ObjectChangeListener;
 public class Cell
 {
     protected String raw; // raw data
-    private ValueTable v;
-    private int row, col;
+    protected ValueTable v;
+    protected int row, col;
     public Cell(String raw, ValueTable v, int  row, int col)
     {
         this.v = v;
