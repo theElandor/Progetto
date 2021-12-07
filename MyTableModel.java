@@ -85,4 +85,8 @@ public class MyTableModel extends AbstractTableModel
         t.AddCellAt(row,col,temp);
         fireTableDataChanged();
     }
+    public String getRawDataAt(int row, int col)
+    {
+       return t.getCella(row, col).getRaw();
+    }
 }

@@ -3,6 +3,7 @@ import java.util.*;
  * Classe che incapsula una hash map.
  *
  */
+@SuppressWarnings({"unsafe","unchecked"})
 public class ValueTable {
     private Map m;
     public ValueTable() {
@@ -13,9 +14,9 @@ public class ValueTable {
         m.put(key, value);
         debug();
     }
-    public Integer get(String key)
+    public Integer get(String key) // suppress warning
     {
-        return (Integer)m.get(key);
+        return (Integer) m.get(key);
     }
     public void remove(String key)
     {

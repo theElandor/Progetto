@@ -52,8 +52,13 @@ public class Cell
     public void resetValueInTable()
     {
         String col = getCharForNumber(this.col);// devo trasformarla
-        String row = Integer.toString(this.row);
+        String row = Integer.toString(this.row+1);
         String result = col+row;
-        v.remove(col);
+        System.out.println("Ho chiamato il metodo su "+result);
+        v.remove(result);
+    }
+    public String getRaw()
+    {
+        return raw;
     }
 }

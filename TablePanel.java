@@ -11,7 +11,7 @@ public class TablePanel extends JPanel
         super();
         t = new Tabella();
         MyTableModel dataModel = new MyTableModel(t);
-        JTable t = new JTable(dataModel);
+        MyJTable t = new MyJTable(dataModel);
         FrozenTablePane frozen = new FrozenTablePane(t,1);
 	    //frozen.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         //p = new JScrollPane(frozen);

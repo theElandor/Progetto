@@ -1,6 +1,7 @@
 import java.lang.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+// editCellAT metodo di JTable
 
 public class FormulaCell extends Cell
 {
@@ -44,7 +45,7 @@ public class FormulaCell extends Cell
          * minuscole.*/
         String first = raw.substring(1,OperatorIndex);
         String second = raw.substring(OperatorIndex+1);
-        Pattern p = Pattern.compile("[A-Z][1-9]{1,2}");
+        Pattern p = Pattern.compile("[A-Z][1-9][0-9]?");
         Matcher first_part = p.matcher(first);
         Matcher second_part= p.matcher(second);
         if(!first_part.matches() && second_part.matches())
