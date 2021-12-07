@@ -89,4 +89,8 @@ public class MyTableModel extends AbstractTableModel
     {
        return t.getCella(row, col).getRaw();
     }
+    public Cell getCellAt(int row, int col)
+    {
+        return t.getCella(row, col);
+    }
 }

@@ -7,7 +7,6 @@ public class FormulaCell extends Cell
 {
     private int value;
     // private String raw = "A1+B2"
-    // x=3, y=1;
     public FormulaCell(String raw, ValueTable v, int row, int col)
     {
         super(raw, v, row , col);
