@@ -4,10 +4,10 @@ public class Saver
 {
     private FileOutputStream fileOut;
     private ObjectOutputStream out;
-    private ArrayList<ArrayList<Cell>> mat;
-    public Saver(ArrayList<ArrayList<Cell>> mat)
+    private Tabella t;
+    public Saver(Tabella t)
     {
-        this.mat = mat;
+        this.t = t;
     }
     public void save()
     {
@@ -29,7 +29,7 @@ public class Saver
         }
         try
         {
-            out.writeObject(mat);
+            out.writeObject(t);
         }
         catch(IOException e)
         {

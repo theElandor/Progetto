@@ -22,7 +22,7 @@ public class MyFrame extends JFrame
          * Creo il listener, devo passargli attraverso
          * i getter la Tabella e la Value Table.
          */
-        listener = new MainMenuListener(p.getTablePanel().getTabella(), p.getTablePanel().getDataModel().getValueTable());
+        listener = new MainMenuListener(p.getTablePanel().getTabella(), p.getTablePanel().getDataModel().getValueTable(),p.getTablePanel().getDataModel());
 
 
         // Creazione del menù principale del frame

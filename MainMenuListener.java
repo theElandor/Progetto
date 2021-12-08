@@ -7,7 +7,7 @@ public class MainMenuListener implements ActionListener
     private Loader l;
     public MainMenuListener(Tabella t, ValueTable v, MyTableModel model)
     {
-        s = new Saver(t.getMat());
+        s = new Saver(t);
         l = new Loader(model);
     }
     public void actionPerformed(ActionEvent e)
@@ -20,6 +20,7 @@ public class MainMenuListener implements ActionListener
         else if(e.getActionCommand().equals("Carica"))
         {
             System.out.println("Caricamento");
+            l.load();
         }
     }
 }

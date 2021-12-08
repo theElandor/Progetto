@@ -1,10 +1,11 @@
 
+import java.io.Serializable;
 import java.util.*;
 /**
  * Matrice che contiene le celle.
  * E' un array di array.
  */
-public class Tabella
+public class Tabella implements Serializable
 {
     private int rows = 99;
     private int cols = 27;
@@ -56,9 +57,5 @@ public class Tabella
     public int getCols()
     {
         return this.cols;
-    }
-    public ArrayList<ArrayList<Cell>> getMat()
-    {
-        return mat;
     }
 }
