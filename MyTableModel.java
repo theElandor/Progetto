@@ -97,4 +97,16 @@ public class MyTableModel extends AbstractTableModel
     {
         return v;
     }
+    /** 
+     * Metodi usati dal loader quando carica
+     * dati da un file.
+     */
+    public void setTabella(Tabella t)
+    {
+        this.t = t;
+    }
+    public void setValueTable(ValueTable v)
+    {
+        this.v = v;
+    }
 }

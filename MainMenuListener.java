@@ -4,9 +4,11 @@ import java.awt.event.*;
 public class MainMenuListener implements ActionListener
 {
     private Saver s;
-    public MainMenuListener(Tabella t, ValueTable v)
+    private Loader l;
+    public MainMenuListener(Tabella t, ValueTable v, MyTableModel model)
     {
         s = new Saver(t.getMat());
+        l = new Loader(model);
     }
     public void actionPerformed(ActionEvent e)
     {
