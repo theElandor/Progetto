@@ -93,4 +93,8 @@ public class MyTableModel extends AbstractTableModel
     {
         return t.getCella(row, col);
     }
+    public ValueTable getValueTable()
+    {
+        return v;
+    }
 }

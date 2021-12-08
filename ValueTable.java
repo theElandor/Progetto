@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.util.*;
 /***
  * Classe che incapsula una hash map.
  *
  */
 @SuppressWarnings({"unsafe","unchecked"})
-public class ValueTable {
+public class ValueTable implements Serializable {
     private Map m;
     public ValueTable() {
         m = new HashMap<String, Integer>();

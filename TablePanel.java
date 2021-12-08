@@ -5,12 +5,12 @@ import javax.swing.border.Border;
 public class TablePanel extends JPanel
 { // devo creare un JScrollPane contenente la tabella.
     private Tabella t;
-    private JScrollPane p;
+    private MyTableModel dataModel;
     public TablePanel()
     {
         super();
         t = new Tabella();
-        MyTableModel dataModel = new MyTableModel(t);
+        dataModel = new MyTableModel(t);
         MyJTable t = new MyJTable(dataModel);
         FrozenTablePane frozen = new FrozenTablePane(t,1);
 	    //frozen.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -18,5 +18,13 @@ public class TablePanel extends JPanel
         this.setLayout(new BorderLayout());
         this.add(frozen, BorderLayout.CENTER);
         //frozen.getTableHeader().setResizingAllowed(true);
+    }
+    public Tabella getTabella()
+    {
+        return t;
+    }
+    public MyTableModel getDataModel()
+    {
+        return dataModel;
     }
 }

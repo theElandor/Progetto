@@ -4,16 +4,10 @@ import javax.swing.*;
 public class TopMenuPanel extends JPanel
 {
     private JLabel l;
-    private JButton save;
-    private JButton load;
     public TopMenuPanel()
     {
         super();
-        l = new JLabel("Menù principale");
-        save = new JButton("Salva");
-        load = new JButton("Carica");
+        l = new JLabel("Top Space");
         add(l);
-        add(save);
-        add(load);
     }
 }

@@ -6,7 +6,7 @@ import java.util.*;
  */
 public class Tabella
 {
-    private int rows = 50;
+    private int rows = 99;
     private int cols = 27;
     private ArrayList<ArrayList<Cell>> mat;
     public Tabella()
@@ -56,5 +56,9 @@ public class Tabella
     public int getCols()
     {
         return this.cols;
+    }
+    public ArrayList<ArrayList<Cell>> getMat()
+    {
+        return mat;
     }
 }

@@ -1,6 +1,8 @@
+import java.io.Serializable;
+
 import javax.naming.event.ObjectChangeListener;
 
-public class Cell
+public class Cell implements Serializable
 {
     protected String raw; // raw data
     protected ValueTable v;
