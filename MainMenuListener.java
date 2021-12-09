@@ -26,7 +26,7 @@ public class MainMenuListener implements ActionListener
         }
         else if(e.getActionCommand().equals("Salva con nome"))
         {
-            
+            System.out.println("Command not found");
         }
     }
 }

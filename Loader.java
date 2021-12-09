@@ -19,13 +19,12 @@ public class Loader
         try
         {
             JFileChooser chooser = new JFileChooser();
-            System.out.println("Ho creato il file chooser");
+            chooser.showOpenDialog(null);
             selected = chooser.getSelectedFile();
-            System.out.println("Ho eseguto il selected");
         }
         catch(NullPointerException e)
         {
-            System.out.println("Erore nel getSelectedFile()");
+            System.out.println("Errore nel getSelectedFile()");
         }
         try
         {
@@ -34,6 +33,10 @@ public class Loader
         catch(IOException e)
         {
             System.out.println("Errore in fase di caricamento.");
+        }
+        catch (NullPointerException e)
+        {
+            System.out.println("Non è stato caricato nessun file.");
         }
         try
         {
