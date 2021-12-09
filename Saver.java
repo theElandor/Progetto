@@ -1,5 +1,9 @@
+import javax.swing.*;
 import java.io.*;
-import java.util.*;
+import javax.swing.JOptionPane;
+
+import javax.swing.JFileChooser;
+
 public class Saver
 {
     private FileOutputStream fileOut;
@@ -13,9 +17,12 @@ public class Saver
     {
         try
         {
-            fileOut = new FileOutputStream(new File("./backup.ser"));
+            JFileChooser chooser = new JFileChooser();
+            chooser.showSaveDialog(null);
+            String path=chooser.getSelectedFile().getAbsolutePath();
+            fileOut = new FileOutputStream(new File(path+".ser"));
         }
-        catch(IOException e)
+        catch(Exception e)
         {
             System.out.println("Errore in fase di salvataggio.");
         }
@@ -54,5 +61,7 @@ public class Saver
         {
             System.out.println("Errore in fase di chiusura");
         }
+        JOptionPane.showMessageDialog(null, "File salvato correttamente.", "MessageBox: " + "FileSavedCorrectly", JOptionPane.INFORMATION_MESSAGE);
+
     }
 }
