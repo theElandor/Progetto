@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import javax.swing.JFileChooser;
 public class Loader
 {
     private MyTableModel model;
@@ -7,6 +8,8 @@ public class Loader
     private ObjectInputStream ois;
     private Object tabella;
     private Object hashMap;
+    private File selected;
+
     public Loader(MyTableModel model)
     {
         this.model = model;
@@ -15,7 +18,18 @@ public class Loader
     {
         try
         {
-            fis = new FileInputStream(new File("./backup.ser"));
+            JFileChooser chooser = new JFileChooser();
+            System.out.println("Ho creato il file chooser");
+            selected = chooser.getSelectedFile();
+            System.out.println("Ho eseguto il selected");
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("Erore nel getSelectedFile()");
+        }
+        try
+        {
+            fis = new FileInputStream(selected);
         }
         catch(IOException e)
         {
