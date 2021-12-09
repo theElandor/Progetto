@@ -101,6 +101,10 @@ public class MyTableModel extends AbstractTableModel
      * Metodi usati dal loader quando carica
      * dati da un file.
      */
+    public Tabella getTabella()
+    {
+        return t;
+    }
     public void setTabella(Tabella t)
     {
         this.t = t;

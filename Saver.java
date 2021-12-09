@@ -4,16 +4,16 @@ public class Saver
 {
     private FileOutputStream fileOut;
     private ObjectOutputStream out;
-    private Tabella t;
-    public Saver(Tabella t)
+    private MyTableModel model;
+    public Saver(MyTableModel model)
     {
-        this.t = t;
+        this.model = model;
     }
     public void save()
     {
         try
         {
-            fileOut = new FileOutputStream("./backup.ser");
+            fileOut = new FileOutputStream(new File("./backup.ser"));
         }
         catch(IOException e)
         {
@@ -29,7 +29,8 @@ public class Saver
         }
         try
         {
-            out.writeObject(t);
+            out.writeObject(model.getTabella());
+            out.writeObject(model.getValueTable());
         }
         catch(IOException e)
         {
@@ -38,6 +39,7 @@ public class Saver
         }
         try
         {
+            out.flush();
             out.close();
         }
         catch(IOException e)

@@ -5,7 +5,8 @@ public class Loader
     private MyTableModel model;
     private FileInputStream fis;
     private ObjectInputStream ois;
-    private Object result;
+    private Object tabella;
+    private Object hashMap;
     public Loader(MyTableModel model)
     {
         this.model = model;
@@ -14,7 +15,7 @@ public class Loader
     {
         try
         {
-            fis = new FileInputStream("./backup.ser");
+            fis = new FileInputStream(new File("./backup.ser"));
         }
         catch(IOException e)
         {
@@ -30,7 +31,8 @@ public class Loader
         }
         try
         {
-            result = ois.readObject();
+            tabella = ois.readObject();
+            hashMap = ois.readObject();
         }   
         catch(ClassNotFoundException c)
         {
@@ -40,7 +42,8 @@ public class Loader
         {
             System.out.println("Class not found");
         }
-        model.setTabella((Tabella)result);
+        model.setTabella((Tabella)tabella);
+        model.setValueTable((ValueTable)hashMap);
         model.fireTableDataChanged();
     }
 }

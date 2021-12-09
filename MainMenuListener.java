@@ -5,9 +5,9 @@ public class MainMenuListener implements ActionListener
 {
     private Saver s;
     private Loader l;
-    public MainMenuListener(Tabella t, ValueTable v, MyTableModel model)
+    public MainMenuListener(MyTableModel model)
     {
-        s = new Saver(t);
+        s = new Saver(model);
         l = new Loader(model);
     }
     public void actionPerformed(ActionEvent e)
