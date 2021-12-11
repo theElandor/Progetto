@@ -9,6 +9,7 @@ public class Saver
     private FileOutputStream fileOut;
     private ObjectOutputStream out;
     private MyTableModel model;
+
     public Saver(MyTableModel model)
     {
         this.model = model;
@@ -62,6 +63,15 @@ public class Saver
             System.out.println("Errore in fase di chiusura");
         }
         JOptionPane.showMessageDialog(null, "File salvato correttamente.", "MessageBox: " + "FileSavedCorrectly", JOptionPane.INFORMATION_MESSAGE);
-
+    }
+    /**
+     * Se il file non è ancora stato salvato allora
+     * viene chiamato il metodo "save()". Altrimenti
+     * viene sovrascritto il vecchio salvataggio, come
+     * in excel.2
+     */
+    public void update_save()
+    {
+        return;
     }
 }

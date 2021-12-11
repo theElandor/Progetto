@@ -14,7 +14,8 @@ public class MainMenuListener implements ActionListener
     {
         // meglio fare uno switch case.
         // creando una variabile di appoggio.
-        if(e.getActionCommand().equals("Salva"))
+        System.out.println(e.getActionCommand());
+        if(e.getActionCommand().equals("Salva con nome"))
         {
             System.out.println("Salvataggio");
             s.save();
@@ -24,9 +25,9 @@ public class MainMenuListener implements ActionListener
             System.out.println("Caricamento");
             l.load();
         }
-        else if(e.getActionCommand().equals("Salva con nome"))
+        else if(e.getActionCommand().equals("Salva"))
         {
-            System.out.println("Command not found");
+            s.update_save();
         }
     }
 }

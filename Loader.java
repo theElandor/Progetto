@@ -23,11 +23,10 @@ public class Loader
             JFileChooser chooser = new JFileChooser();
             chooser.showOpenDialog(null);
             selected = chooser.getSelectedFile();
-            while(!this.getExtension(selected).equals("ser"))
+            if(!this.getExtension(selected).equals("ser"))
             {
                 JOptionPane.showMessageDialog(null, "File non valido, carica un file con estensione .ser.", "MessageBox: " + "Error", JOptionPane.INFORMATION_MESSAGE);
-                chooser.showOpenDialog(null);
-                selected = chooser.getSelectedFile();
+                return;
             }
         }
         catch(NullPointerException e)

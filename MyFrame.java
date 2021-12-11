@@ -39,6 +39,7 @@ public class MyFrame extends JFrame
         mb.add(m1);
         this.setJMenuBar(mb);
         m11.addActionListener(listener);
+        m12.addActionListener(listener);
         m13.addActionListener(listener);
 
         this.add(p, BorderLayout.CENTER);    
