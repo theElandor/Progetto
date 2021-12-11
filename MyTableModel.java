@@ -16,17 +16,22 @@ public class MyTableModel extends AbstractTableModel
     // setValueAt(Object , int, int) per settare il valore di una cella.
     private Tabella t;
     private ValueTable v;
-    // in qualche modo devo poter vedere la
-    // struttura dati. Provo a passarla con il costruttore
+    /**
+     * Parametro che serve a capire se il model è già stato salvato.*/
+    private Boolean saved;
+    /**
+     * Parametro che tiene in memoria il nome del salvataggio
+     * in memoria corrispondente alla struttura dati.
+     */
+    private String currentSave;
+
     public MyTableModel(Tabella t)
     {
         this.t = t;
+        saved = false;
         v = new ValueTable();
     }
-    public int getColumnCount()
-    {
-        return(t.getCols());
-    }
+    public int getColumnCount() {return(t.getCols());}
     /**
      * In questo caso ritorno rubrica.size()
      */
@@ -59,6 +64,10 @@ public class MyTableModel extends AbstractTableModel
     {
 	return Integer.toString(row+1);
     }
+    public Boolean getSaved()
+    {
+        return this.saved;
+    }
     public boolean isCellEditable(int row, int col)
     {
         return true;
@@ -85,32 +94,17 @@ public class MyTableModel extends AbstractTableModel
         t.AddCellAt(row,col,temp);
         fireTableDataChanged();
     }
-    public String getRawDataAt(int row, int col)
-    {
-       return t.getCella(row, col).getRaw();
-    }
-    public Cell getCellAt(int row, int col)
-    {
-        return t.getCella(row, col);
-    }
-    public ValueTable getValueTable()
-    {
-        return v;
-    }
+    public String getRawDataAt(int row, int col) {return t.getCella(row, col).getRaw();}
+    public Cell getCellAt(int row, int col) {return t.getCella(row, col);}
+    public ValueTable getValueTable() {return v;}
     /** 
      * Metodi usati dal loader quando carica
      * dati da un file.
      */
-    public Tabella getTabella()
-    {
-        return t;
-    }
-    public void setTabella(Tabella t)
-    {
-        this.t = t;
-    }
-    public void setValueTable(ValueTable v)
-    {
-        this.v = v;
-    }
+    public Tabella getTabella() {return t;}
+    public void setTabella(Tabella t) {this.t = t;}
+    public void setValueTable(ValueTable v) {this.v = v;}
+    public void setSaved(boolean val) {this.saved = val;}
+    public void setCurrentSave(String name){this.currentSave = name;}
+    public String getCurrentSave(){return this.currentSave;}
 }

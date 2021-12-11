@@ -62,6 +62,7 @@ public class Saver
         {
             System.out.println("Errore in fase di chiusura");
         }
+        model.setSaved(true); //dico al modello che è già stato salvato.
         JOptionPane.showMessageDialog(null, "File salvato correttamente.", "MessageBox: " + "FileSavedCorrectly", JOptionPane.INFORMATION_MESSAGE);
     }
     /**
@@ -72,6 +73,6 @@ public class Saver
      */
     public void update_save()
     {
-        return;
+
     }
 }
