@@ -18,8 +18,13 @@ public class BigPanel extends JPanel
         this.add(m, BorderLayout.NORTH);
 	    this.add(b, BorderLayout.SOUTH);
     }
-    public TablePanel getTablePanel()
-    {
-        return p;
-    }
+
+    /**
+     * Vari getter dei pannelli. Vengono usati quando altre classi devono
+     * modificarli per mostrare messaggi o per interagire con i componenti
+     * in essi contenuti.
+     */
+    public TablePanel getTablePanel(){return p;}
+    public BottomMenuPanel getBottomMenuPanel(){return b;}
+    public TopMenuPanel geTopMenuPanel(){return m;}
 }

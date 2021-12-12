@@ -68,6 +68,9 @@ public class Loader
         }
         model.setTabella((Tabella)tabella);
         model.setValueTable((ValueTable)hashMap);
+        model.setSaved(true);
+        System.out.println(selected.toString());
+        model.setCurrentSave(selected.toString());
         model.fireTableDataChanged();
     }
     public String getExtension(File file)
