@@ -29,9 +29,7 @@ public class MyFrame extends JFrame
         JMenuItem m11 = new JMenuItem("Salva");
         JMenuItem m12 = new JMenuItem("Salva con nome");
         JMenuItem m13 = new JMenuItem("Carica");
-        JMenuItem m14 = new JMenuItem("Nuovo");
         JMenu m1 = new JMenu("File");
-        m1.add(m14);
         m1.add(m11);
         m1.add(m12);
         m1.add(m13);

@@ -26,6 +26,8 @@ public class Saver
     }
     public void save()
     {
+        // Sarebbe meglio accorpare i try catch per avere
+        // un codice più pulito.
         try
         {
             JFileChooser chooser = new JFileChooser();
