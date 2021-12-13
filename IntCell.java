@@ -13,8 +13,4 @@ public class IntCell extends Cell
     {
         return raw;
     }
-    public Integer getValue()
-    {
-        return value;
-    }
 }

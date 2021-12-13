@@ -18,9 +18,6 @@ public class Tabella implements Serializable
             ArrayList<Cell> singleList = new ArrayList<Cell>(26);
             for(int j = 0 ; j < cols; j++)
             {
-                // domanda: perchè se non inizializzo tutte le caselle
-                // con delle celle nulle (senza allocare memoria quindi)
-                // mi va in IndexOutOfBound ? IDK.
                 Cell nuova = null;
                 singleList.add(nuova);
             }

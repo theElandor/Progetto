@@ -29,16 +29,26 @@ public class MyFrame extends JFrame
         JMenuItem m11 = new JMenuItem("Salva");
         JMenuItem m12 = new JMenuItem("Salva con nome");
         JMenuItem m13 = new JMenuItem("Carica");
+        JMenuItem m21 = new JMenuItem("Ordina colonne...");
+
         JMenu m1 = new JMenu("File");
+        JMenu m2 = new JMenu("Modifica");
+
         m1.add(m11);
         m1.add(m12);
         m1.add(m13);
+
+        m2.add(m21);
+
         JMenuBar mb = new JMenuBar();
         mb.add(m1);
+        mb.add(m2);
+
         this.setJMenuBar(mb);
         m11.addActionListener(listener);
         m12.addActionListener(listener);
         m13.addActionListener(listener);
+        m21.addActionListener(listener);
 
         this.add(p, BorderLayout.CENTER);    
     }

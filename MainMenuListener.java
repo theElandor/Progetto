@@ -27,7 +27,14 @@ public class MainMenuListener implements ActionListener
         }
         else if(e.getActionCommand().equals("Salva"))
         {
-            s.update_save();
+            s.update_save(true);
+        }
+        else if(e.getActionCommand().equals("Ordina colonne..."))
+        {
+            Object[] possibilities = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+            Character c = (Character)JOptionPane.showInputDialog(null, "Seleziona una colonna...", "MessageBox: " + "ColumnChooser", JOptionPane.INFORMATION_MESSAGE, null,possibilities,"Colonne");
+            // c viene preso correttamente.
+
         }
     }
 }

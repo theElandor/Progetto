@@ -13,15 +13,8 @@ public class FormulaCell extends Cell
         System.out.println("Creazione cella formula");
     }
     @Override
-    /**
-     * Codice che dalla formula memorizzata
-     * sotto forma di stringa in Raw ritorna 
-     * il valore intero dell'operazione
-     */
     public String getRenderedValue()
     {
-        // grazie ad un primo controllo fatto dalla funzione
-        // specialize, so già che il primo carattere è un uguale.
         return getCellValue();
     }
     public String getCellValue()
@@ -33,10 +26,9 @@ public class FormulaCell extends Cell
             if(temp == '+' || temp == '-' || temp == '*')
                 OperatorIndex = i;
         }
-        /**
-         * Rimarrebbe da risolvere il caso in cui l'utente
-         * inserisce gli identificativi delle colonne come lettere
-         * minuscole.*/
+        // controllo se per caso l'utente sta inserendo una formula senza
+        // operatore.
+        if(OperatorIndex == -1){return "BadSyntaxError";}
         String first = raw.substring(1,OperatorIndex);
         String second = raw.substring(OperatorIndex+1);
         Pattern p = Pattern.compile("([A-Z][1-9][0-9]?)|0|[1-9][0-9]*");
@@ -63,7 +55,7 @@ public class FormulaCell extends Cell
         {
             first_int = v.get(first);
             if(first_int == null)
-                return "NullValueFound";
+                return "NullValueFound: è stata inserita una cella non esistente o una cella inserita non contiene valori.";
         }
         if(second_int == null)
         {

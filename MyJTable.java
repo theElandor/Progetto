@@ -1,4 +1,7 @@
+import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.util.EventObject;
+import javax.management.RuntimeMBeanException;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 public class MyJTable extends JTable
@@ -8,6 +11,7 @@ public class MyJTable extends JTable
     {
         super(dataModel);
         this.data= dataModel;
+        this.setAutoCreateRowSorter(true);
     }
     @Override
     public boolean editCellAt(int row, int column, EventObject e){
@@ -24,5 +28,26 @@ public class MyJTable extends JTable
             } 
         }
         return ans;
+    }
+    /**
+     * Metodo implementato per il toolTip quando si passa con il mouse
+     * su una cella. In caso di cella vuota, si ritorna null per non mostrare il tooltip.
+     * */
+    public String getToolTipText(MouseEvent e)
+    {
+        String tip = null;
+        Point p = e.getPoint();
+        int rowIndex = rowAtPoint(p);
+        int colIndex = columnAtPoint(p);
+        try
+        {
+            tip = getValueAt(rowIndex, colIndex).toString();
+            if(tip.equals(""))
+            {
+                throw(new RuntimeException());
+            }
+        }
+        catch(RuntimeException e1){return null;}
+        return tip;
     }
 }

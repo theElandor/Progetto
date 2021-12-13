@@ -23,7 +23,9 @@ public class Loader
             JFileChooser chooser = new JFileChooser();
             chooser.showOpenDialog(null);
             selected = chooser.getSelectedFile();
-            if(!this.getExtension(selected).equals("ser"))
+            String extension = this.getExtension(selected);
+            System.out.println(extension);
+            if(!extension.equals("ser") && !extension.equals("ser~"))
             {
                 JOptionPane.showMessageDialog(null, "File non valido, carica un file con estensione .ser.", "MessageBox: " + "Error", JOptionPane.INFORMATION_MESSAGE);
                 return;

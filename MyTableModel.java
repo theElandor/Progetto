@@ -60,10 +60,6 @@ public class MyTableModel extends AbstractTableModel
     {
         return Character.toString(Character.toUpperCase(alphabet[col]));
     }
-    public String getRowName(int row)
-    {
-	return Integer.toString(row+1);
-    }
     public Boolean getSaved()
     {
         return this.saved;

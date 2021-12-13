@@ -28,6 +28,9 @@ public class Saver
     {
         // Sarebbe meglio accorpare i try catch per avere
         // un codice più pulito.
+
+        // Quando la save viene chiamata per la prima volta, viene
+        // creato il thread che chiama l'autosave ogni X secondi.
         try
         {
             JFileChooser chooser = new JFileChooser();
@@ -77,20 +80,31 @@ public class Saver
         model.setSaved(true); //dico al modello che è già stato salvato.
         model.setCurrentSave(path);
         JOptionPane.showMessageDialog(null, "File salvato correttamente.", "MessageBox: " + "FileSavedCorrectly", JOptionPane.INFORMATION_MESSAGE);
+        // creo il thread
     }
     /**
      * Se il file non è ancora stato salvato allora
      * viene chiamato il metodo "save()". Altrimenti
      * viene sovrascritto il vecchio salvataggio, come
-     * in excel.2
+     * in excel.
+     * Se Backup è false, allora la funzione sovrascrive il salvataggio
+     * precedente. Se Backup è true, allora la funzione crea un nuovo
+     * file dal nome "model.getCurrentSave()+~". La funzione
+     * update_save viene chiamata automaticamente da un thread
+     * ogni 30 secondi con il parametro Backup = true, in modo
+     * da simulare un salvataggio automatico, utile in caso di crash.
      */
-    public void update_save()
+    public void update_save(boolean Backup)
     {
         if(model.getSaved())
         {
             try
             {
-                fileOut = new FileOutputStream(new File(model.getCurrentSave()));
+                if(!Backup)
+                    fileOut = new FileOutputStream(new File(model.getCurrentSave()));
+                else
+                    fileOut = new FileOutputStream(new File(model.getCurrentSave()+"~"));
+
                 out = new ObjectOutputStream(fileOut);
                 out.writeObject(model.getTabella());
                 out.writeObject(model.getValueTable());
@@ -109,3 +123,11 @@ public class Saver
         }
     }
 }
+
+
+
+
+
+
+
+
