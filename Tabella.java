@@ -31,7 +31,7 @@ public class Tabella implements Serializable
     public void AddCellAt(int row, int col, Cell temp)
     {
         mat.get(row).remove(col);
-        // devo fare il remove, altrimenti l'arrayList shifta gli elementi
+        // devo fare il remove, altrimenti l'arrayList sposta gli elementi
         // per fare spazio all'elemento nuovo nel caso in cui una cella
         // viene ricreata.
         mat.get(row).add(col, temp);

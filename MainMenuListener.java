@@ -1,4 +1,4 @@
-import java.awt.*;
+
 import javax.swing.*;
 import java.awt.event.*;
 public class MainMenuListener implements ActionListener
@@ -9,6 +9,8 @@ public class MainMenuListener implements ActionListener
     {
         s = new Saver(model, b);
         l = new Loader(model);
+        AutoSaver autoSaver = new AutoSaver(s,b);
+        autoSaver.start(); // faccio partire il thread del salvataggio automatico.
     }
     public void actionPerformed(ActionEvent e)
     {
@@ -27,7 +29,7 @@ public class MainMenuListener implements ActionListener
         }
         else if(e.getActionCommand().equals("Salva"))
         {
-            s.update_save(true);
+            s.update_save(false);
         }
         else if(e.getActionCommand().equals("Ordina colonne..."))
         {

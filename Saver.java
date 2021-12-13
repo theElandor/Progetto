@@ -1,8 +1,5 @@
-import javax.swing.*;
 import java.io.*;
-import java.util.concurrent.TimeUnit;
 import javax.swing.JOptionPane;
-
 import javax.swing.JFileChooser;
 
 public class Saver
@@ -24,6 +21,10 @@ public class Saver
         this.b = b;
         this.model = model;
     }
+    public MyTableModel getModel()
+    {
+        return model;
+    }
     public void save()
     {
         // Sarebbe meglio accorpare i try catch per avere
@@ -36,6 +37,13 @@ public class Saver
             JFileChooser chooser = new JFileChooser();
             chooser.showSaveDialog(null);
             path=chooser.getSelectedFile().getAbsolutePath()+".ser";
+            File temp = new File(path);
+            if(temp.exists() && !temp.isDirectory())
+            {
+                int n = JOptionPane.showConfirmDialog(null, "Il file "+path+" esiste già. Sovrascrivere il file?", "Conferma Salvataggio", JOptionPane.YES_NO_OPTION);
+                if(n == 1)
+                    return;
+            }
             fileOut = new FileOutputStream(new File(path));
         }
         catch(Exception e)
@@ -80,7 +88,6 @@ public class Saver
         model.setSaved(true); //dico al modello che è già stato salvato.
         model.setCurrentSave(path);
         JOptionPane.showMessageDialog(null, "File salvato correttamente.", "MessageBox: " + "FileSavedCorrectly", JOptionPane.INFORMATION_MESSAGE);
-        // creo il thread
     }
     /**
      * Se il file non è ancora stato salvato allora
@@ -98,6 +105,12 @@ public class Saver
     {
         if(model.getSaved())
         {
+            if(!Backup) // se il metodo è chiamato dall'autoSaver, allora non devo chiedere conferma all'utente.
+            {
+                int n = JOptionPane.showConfirmDialog(null, "Il file "+model.getCurrentSave()+" sta per essere sovrascritto. Continuare?", "Conferma Salvataggio", JOptionPane.YES_NO_OPTION);
+                if(n == 1)
+                    return;
+            }
             try
             {
                 if(!Backup)

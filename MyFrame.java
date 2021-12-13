@@ -1,7 +1,6 @@
-import javax.swing.JPanel;
+
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.border.Border;
 public class MyFrame extends JFrame
 {
     private BigPanel p;
@@ -14,7 +13,7 @@ public class MyFrame extends JFrame
     {
         super(titolo);
         setBounds(0,0,1280,720);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         // Creazione del pannello principale
         p = new BigPanel();
 
@@ -50,6 +49,17 @@ public class MyFrame extends JFrame
         m13.addActionListener(listener);
         m21.addActionListener(listener);
 
-        this.add(p, BorderLayout.CENTER);    
+        this.add(p, BorderLayout.CENTER);
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                if (JOptionPane.showConfirmDialog(p,
+                        "Sei sicuro di uscire?", "Conferma uscita.",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+                    System.exit(0);
+                }
+            }
+        });
     }
 }

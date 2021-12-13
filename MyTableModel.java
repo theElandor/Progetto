@@ -1,12 +1,7 @@
-/**
+/*
  * Di base non creo tutte le celle subito, quando viene inserito un
  * valore, creo la cella adatta identificando quel valore.
  */
-import com.sun.jdi.Value;
-import java.awt.event.*; import javax.swing.*;
-import java.awt.Point;
-
-
 import javax.swing.table.AbstractTableModel;
 public class MyTableModel extends AbstractTableModel
 {
