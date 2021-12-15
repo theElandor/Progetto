@@ -1,6 +1,12 @@
 
 import java.awt.*;
 import javax.swing.*;
+/**
+ * Frame del foglio di calcolo, a cui e' associato un Menu' principale di scelta multipla.
+ * Contiene un'oggetto di tipo BigPanel.
+ * A questa classe e' associato un WindowListener, in modo da poter lanciare la finestra di dialogo
+ * che chiede all'utente conferma prima di uscire.
+ */
 public class MyFrame extends JFrame
 {
     private BigPanel p;
@@ -28,26 +34,26 @@ public class MyFrame extends JFrame
         JMenuItem m11 = new JMenuItem("Salva");
         JMenuItem m12 = new JMenuItem("Salva con nome");
         JMenuItem m13 = new JMenuItem("Carica");
-        JMenuItem m21 = new JMenuItem("Ordina colonne...");
+        //JMenuItem m21 = new JMenuItem("Ordina colonne...");
 
         JMenu m1 = new JMenu("File");
-        JMenu m2 = new JMenu("Modifica");
+        //JMenu m2 = new JMenu("Modifica");
 
         m1.add(m11);
         m1.add(m12);
         m1.add(m13);
 
-        m2.add(m21);
+        //m2.add(m21);
 
         JMenuBar mb = new JMenuBar();
         mb.add(m1);
-        mb.add(m2);
+        //mb.add(m2);
 
         this.setJMenuBar(mb);
         m11.addActionListener(listener);
         m12.addActionListener(listener);
         m13.addActionListener(listener);
-        m21.addActionListener(listener);
+        // m21.addActionListener(listener);
 
         this.add(p, BorderLayout.CENTER);
         this.addWindowListener(new java.awt.event.WindowAdapter() {
