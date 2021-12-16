@@ -1,12 +1,12 @@
 import java.io.Serializable;
-
 import javax.naming.event.ObjectChangeListener;
 
 public class Cell implements Serializable
 {
-    protected String raw; // raw data
+    protected String raw;
     protected ValueTable v;
     protected int row, col;
+
     public Cell(String raw, ValueTable v, int  row, int col)
     {
         this.v = v;
@@ -21,15 +21,8 @@ public class Cell implements Serializable
      * la stringa inserita dall'utente. 
      * @return
      */
-    public String getRenderedValue()
-    {
-        return raw;
-    }
-   /*
-   * Metodo che ritorna:
-   * 1) Se la cella deve specializzarsi in StringCell
-   * 2) Se la cella deve specializzarsi in IntCell
-   * 3) Se la cella deve specializzarsi in FormulaCell*/
+    public String getRenderedValue(){return getRaw();} // di base ritorna semplicemente il valore della stringa
+    public String getRaw() {return raw;}
    public int SpecializeCell()
    {
        int return_value;
@@ -45,12 +38,7 @@ public class Cell implements Serializable
        }
        return return_value;
    }
-    public String getCharForNumber(int i) {
-        return i > 0 && i < 27 ? String.valueOf((char)(i + 64)) : null;
-    }
-    /**
-     * Metodo per togliere dalla tabella contenente i valori numerici
-     * eventuali valori pre-memorizzati.*/
+    public String getCharForNumber(int i) {return i > 0 && i < 27 ? String.valueOf((char)(i + 64)) : null;}
     public void resetValueInTable()
     {
         String col = getCharForNumber(this.col);// devo trasformarla
@@ -58,9 +46,5 @@ public class Cell implements Serializable
         String result = col+row;
         System.out.println("Ho chiamato il metodo su "+result);
         v.remove(result);
-    }
-    public String getRaw()
-    {
-        return raw;
     }
 }

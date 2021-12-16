@@ -20,13 +20,9 @@ public class MyFrame extends JFrame
         super(titolo);
         setBounds(0,0,1280,720);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        // Creazione del pannello principale
+        
         p = new BigPanel();
 
-        /**
-         * Creo il listener, devo passargli attraverso
-         * i getter la Tabella e la Value Table.
-         */
         listener = new MainMenuListener(p.getTablePanel().getDataModel(), p.getBottomMenuPanel());
 
 

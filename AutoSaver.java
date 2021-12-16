@@ -1,10 +1,10 @@
-public class AutoSaver extends Thread{
+public class AutoSaver extends DialogHandler{
     private Saver saver;
     private BottomMenuPanel b;
-    public AutoSaver(Saver saver, BottomMenuPanel b)
+    public AutoSaver(Saver saver, BottomMenuPanel logPanel)
     {
+        super(logPanel);
         this.saver = saver;
-        this.b = b;
     }
     public void run(){
         while(true)
@@ -18,13 +18,13 @@ public class AutoSaver extends Thread{
             {
                 saver.update_save(true);
 
-                b.getLog().setText("Sessione corrente salvata in un file di backup.");
+                writeLog("Sessione corrente salvata in un file di backup.");
                 try
                 {
                     Thread.sleep(3000);
                 }
                 catch(InterruptedException e1){}
-                b.getLog().setText(" ");
+                writeLog(" ");
             }
         }
     }

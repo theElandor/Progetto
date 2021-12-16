@@ -2,7 +2,6 @@ import java.io.Serializable;
 import java.util.*;
 /***
  * Classe che incapsula una hash map.
- *
  */
 @SuppressWarnings({"unsafe","unchecked"})
 public class ValueTable implements Serializable {
@@ -15,7 +14,7 @@ public class ValueTable implements Serializable {
         m.put(key, value);
         debug();
     }
-    public Integer get(String key) // suppress warning
+    public Integer get(String key)
     {
         return (Integer) m.get(key);
     }

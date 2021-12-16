@@ -2,12 +2,11 @@ import java.io.*;
 import javax.swing.JOptionPane;
 import javax.swing.JFileChooser;
 
-public class Saver
+public class Saver extends DialogHandler
 {
     private FileOutputStream fileOut;
     private ObjectOutputStream out;
     private MyTableModel model;
-    private BottomMenuPanel b;
     private String path;
 
     /**
@@ -16,9 +15,9 @@ public class Saver
      * settare il texField nello spazio apposito in basso a sinistra,
      * corrispondente al menù di log.
      */
-    public Saver(MyTableModel model, BottomMenuPanel b)
+    public Saver(MyTableModel model, BottomMenuPanel logPanel)
     {
-        this.b = b;
+        super(logPanel);
         this.model = model;
     }
     public MyTableModel getModel()
@@ -27,9 +26,6 @@ public class Saver
     }
     public void save()
     {
-        // Sarebbe meglio accorpare i try catch per avere
-        // un codice più pulito.
-
         // Quando la save viene chiamata per la prima volta, viene
         // creato il thread che chiama l'autosave ogni X secondi.
         try
@@ -44,19 +40,20 @@ public class Saver
                 if(n == 1)
                     return;
             }
-            fileOut = new FileOutputStream(new File(path));
         }
-        catch(Exception e)
+        catch(NullPointerException e)
         {
-            System.out.println("Errore in fase di salvataggio.");
+            throwErrorDialog("Salvataggio annullato.");
+            return;
         }
         try
         {
+            fileOut = new FileOutputStream(new File(path));
             out = new ObjectOutputStream(fileOut);
         }
-        catch(IOException e)
+        catch(Exception e)
         {
-            System.out.println("Errore in fase di salvataggio.");
+            throwErrorDialog("Errore in fase di salvataggio del file.");
         }
         try
         {
@@ -65,37 +62,30 @@ public class Saver
         }
         catch(IOException e)
         {
-            System.out.println("Errore in scrittura.");
+            throwErrorDialog("Errore in fase di scrittura.");
             System.out.println(e);
         }
         try
         {
             out.flush();
             out.close();
-        }
-        catch(IOException e)
-        {
-            System.out.println("Errore in fase di chiusura");
-        }
-        try
-        {
             fileOut.close();
         }
         catch(IOException e)
         {
-            System.out.println("Errore in fase di chiusura");
+            throwErrorDialog("Errore in fase di chiusura");
         }
-        model.setSaved(true); //dico al modello che è già stato salvato.
+        model.setSaved(true);
         model.setCurrentSave(path);
         JOptionPane.showMessageDialog(null, "File salvato correttamente.", "MessageBox: " + "FileSavedCorrectly", JOptionPane.INFORMATION_MESSAGE);
     }
     /**
-     * Se il file non è ancora stato salvato allora
+     * Se il file non e' ancora stato salvato allora
      * viene chiamato il metodo "save()". Altrimenti
      * viene sovrascritto il vecchio salvataggio, come
      * in excel.
-     * Se Backup è false, allora la funzione sovrascrive il salvataggio
-     * precedente. Se Backup è true, allora la funzione crea un nuovo
+     * Se Backup e' false, allora la funzione sovrascrive il salvataggio
+     * precedente. Se Backup e' true, allora la funzione crea un nuovo
      * file dal nome "model.getCurrentSave()+~". La funzione
      * update_save viene chiamata automaticamente da un thread
      * ogni 30 secondi con il parametro Backup = true, in modo
@@ -126,9 +116,9 @@ public class Saver
             }
             catch(IOException e)
             {
-                System.out.println("Errore in fase di salvataggio.");
+                throwErrorDialog("Errore in fase di salvataggio.");
             }
-            b.getLog().setText(model.getCurrentSave()+" salvato.");
+            writeLog(model.getCurrentSave()+" salvato.");
         }
         else
         {

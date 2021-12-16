@@ -3,7 +3,7 @@ import java.util.*;
 import javax.swing.JOptionPane;
 import javax.swing.JFileChooser;
 
-public class Loader
+public class Loader extends DialogHandler
 {
     private MyTableModel model;
     private FileInputStream fis;
@@ -12,14 +12,15 @@ public class Loader
     private Object hashMap;
     private File selected;
 
-    public Loader(MyTableModel model)
+    public Loader(MyTableModel model, BottomMenuPanel logPanel)
     {
+        super(logPanel);
         this.model = model;
     }
     public void load()
     {
         try
-        { // da mettere a posto, ciclo while brutto, da riscrivere.
+        { 
             JFileChooser chooser = new JFileChooser();
             chooser.showOpenDialog(null);
             selected = chooser.getSelectedFile();
@@ -27,46 +28,34 @@ public class Loader
             System.out.println(extension);
             if(!extension.equals("ser") && !extension.equals("ser~"))
             {
-                JOptionPane.showMessageDialog(null, "File non valido, carica un file con estensione .ser.", "MessageBox: " + "Error", JOptionPane.INFORMATION_MESSAGE);
+                throwErrorDialog("File non valido, carica un file con estensione .ser o .ser");
                 return;
             }
         }
         catch(NullPointerException e)
         {
-            System.out.println("Errore nel getSelectedFile()");
+            throwErrorDialog("Caricamento annullato.");
+            return;
         }
         try
         {
             fis = new FileInputStream(selected);
-        }
-        catch(IOException e)
-        {
-            System.out.println("Errore in fase di caricamento.");
-        }
-        catch (NullPointerException e)
-        {
-            System.out.println("Non è stato caricato nessun file.");
-        }
-        try
-        {
             ois = new ObjectInputStream(fis);
         }
-        catch(IOException e)
+        catch(Exception e)
         {
-            System.out.println("Errore in fase di creazione dell'o.i.s");
+            throwErrorDialog("Errore in fase di caricamento.");
+            return;
         }
         try
         {
             tabella = ois.readObject();
             hashMap = ois.readObject();
         }   
-        catch(ClassNotFoundException c)
+        catch(ClassNotFoundException | NullPointerException | IOException e)
         {
-            System.out.println("Errore nella lettura dell'oggetto.");
-        }
-        catch(IOException e)
-        {
-            System.out.println("Class not found");
+            throwErrorDialog("Errore nella lettura dell'oggetto.");
+            return;
         }
         model.setTabella((Tabella)tabella);
         model.setValueTable((ValueTable)hashMap);

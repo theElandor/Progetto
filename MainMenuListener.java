@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.event.*;
 public class MainMenuListener implements ActionListener
@@ -8,35 +7,28 @@ public class MainMenuListener implements ActionListener
     public MainMenuListener(MyTableModel model, BottomMenuPanel b)
     {
         s = new Saver(model, b);
-        l = new Loader(model);
+        l = new Loader(model,b);
         AutoSaver autoSaver = new AutoSaver(s,b);
-        autoSaver.start(); // faccio partire il thread del salvataggio automatico.
+        autoSaver.start(); //viene fatto partire il thread del salvataggio automatico.
     }
     public void actionPerformed(ActionEvent e)
     {
-        // meglio fare uno switch case.
-        // creando una variabile di appoggio.
-        System.out.println(e.getActionCommand());
-        if(e.getActionCommand().equals("Salva con nome"))
+        String choice = e.getActionCommand();
+        switch(choice)
         {
-            System.out.println("Salvataggio");
-            s.save();
-        }
-        else if(e.getActionCommand().equals("Carica"))
-        {
-            System.out.println("Caricamento");
-            l.load();
-        }
-        else if(e.getActionCommand().equals("Salva"))
-        {
-            s.update_save(false);
-        }
-        else if(e.getActionCommand().equals("Ordina colonne..."))
-        {
-            Object[] possibilities = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-            Character c = (Character)JOptionPane.showInputDialog(null, "Seleziona una colonna...", "MessageBox: " + "ColumnChooser", JOptionPane.INFORMATION_MESSAGE, null,possibilities,"Colonne");
-            // c viene preso correttamente.
-
+            case "Salva con nome":
+                System.out.println("Salvataggio...");
+                s.save();
+                break;
+            case "Salva":
+                s.update_save(false);
+                break;
+            case "Carica":
+                System.out.println("Caricamento...");
+                l.load();
+                break;
+            default:
+                break;
         }
     }
 }
