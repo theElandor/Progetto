@@ -1,0 +1,7 @@
+<map id="Grafico della gerarchia delle classi" name="Grafico della gerarchia delle classi">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,67,108"/>
+<area shape="rect" id="node2" href="$classBigPanel.html" title="Classe che contiene i due pannelli principali del foglio di calcolo, ossia il TablePanel e il BottomM..." alt="" coords="146,5,225,32"/>
+<area shape="rect" id="node3" href="$classBottomMenuPanel.html" title="Pannello che contiene la finestra di log." alt="" coords="115,56,256,83"/>
+<area shape="rect" id="node4" href="$classTablePanel.html" title=" " alt="" coords="140,107,231,133"/>
+<area shape="rect" id="node5" href="$classTopMenuPanel.html" title=" " alt="" coords="128,157,243,184"/>
+</map>

@@ -1,0 +1,68 @@
+\hypertarget{classAutoSaver}{}\doxysection{Riferimenti per la classe Auto\+Saver}
+\label{classAutoSaver}\index{AutoSaver@{AutoSaver}}
+
+
+Classe che gestisce il salvataggio automatico.  
+
+
+
+
+Diagramma delle classi per Auto\+Saver\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classAutoSaver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagramma di collaborazione per Auto\+Saver\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classAutoSaver__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Membri pubblici}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAutoSaver_ad188d302f45bde46e807ffe6e29eaa69}{Auto\+Saver}} (\mbox{\hyperlink{classSaver}{Saver}} saver, \mbox{\hyperlink{classBottomMenuPanel}{Bottom\+Menu\+Panel}} log\+Panel)
+\begin{DoxyCompactList}\small\item\em Costruttore della classe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAutoSaver_a79a351a06f3c2087627a542fb8339516}{run}} ()
+\begin{DoxyCompactList}\small\item\em Metoto specifico che gestisce il salvataggio automatico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrizione dettagliata}
+Classe che gestisce il salvataggio automatico. 
+
+Classe che estende il \mbox{\hyperlink{classDialogHandler}{Dialog\+Handler}}, in modo da ereditare i metodi per comunicare messaggi all\textquotesingle{}utente attraverso la finestra di log. 
+
+\doxysubsection{Documentazione dei costruttori e dei distruttori}
+\mbox{\Hypertarget{classAutoSaver_ad188d302f45bde46e807ffe6e29eaa69}\label{classAutoSaver_ad188d302f45bde46e807ffe6e29eaa69}} 
+\index{AutoSaver@{AutoSaver}!AutoSaver@{AutoSaver}}
+\index{AutoSaver@{AutoSaver}!AutoSaver@{AutoSaver}}
+\doxysubsubsection{\texorpdfstring{AutoSaver()}{AutoSaver()}}
+{\footnotesize\ttfamily Auto\+Saver.\+Auto\+Saver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSaver}{Saver}}}]{saver,  }\item[{\mbox{\hyperlink{classBottomMenuPanel}{Bottom\+Menu\+Panel}}}]{log\+Panel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Costruttore della classe. 
+
+Chiama il costruttore della classe padre che vuole il log\+Panel come parametro. Tiene un riferimento al saver per usare i metodi che gestiscono il salvataggio. 
+
+\doxysubsection{Documentazione delle funzioni membro}
+\mbox{\Hypertarget{classAutoSaver_a79a351a06f3c2087627a542fb8339516}\label{classAutoSaver_a79a351a06f3c2087627a542fb8339516}} 
+\index{AutoSaver@{AutoSaver}!run@{run}}
+\index{run@{run}!AutoSaver@{AutoSaver}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Auto\+Saver.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoto specifico che gestisce il salvataggio automatico. 
+
+Prima di chiamare il metodo update\+\_\+save, si controlla se il file è un file di backup generato dal metodo stesso. In tal caso, il salvataggio automatico non viene effettuato. 
+
+La documentazione per questa classe è stata generata a partire dal seguente file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{AutoSaver_8java}{Auto\+Saver.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="Grafico della gerarchia delle classi" name="Grafico della gerarchia delle classi">
+<area shape="rect" id="node1" href="$classAutoSaver.html" title="Classe che gestisce il salvataggio automatico." alt="" coords="5,31,95,57"/>
+<area shape="rect" id="node2" href="$classDialogHandler.html" title=" " alt="" coords="143,31,257,57"/>
+<area shape="rect" id="node3" href="$classLoader.html" title=" " alt="" coords="305,5,372,32"/>
+<area shape="rect" id="node4" href="$classSaver.html" title=" " alt="" coords="309,56,368,83"/>
+</map>

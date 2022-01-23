@@ -4,16 +4,36 @@ import java.util.EventObject;
 import javax.management.RuntimeMBeanException;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+/**
+ * Classe che estende JTable per avere alcune funzionalità personalizzate.
+ */
 public class MyJTable extends JTable
 {
     MyTableModel data;
+
+    /**
+     * Semplice costruttore che chiama il metodo della classe padre, che necessita del dataModel 
+     * come parametro. Per semplicità salvo il dataModel anche im un parametro locale.
+     *
+     * @param dataModel
+     */
     public MyJTable(MyTableModel dataModel)
     {
         super(dataModel);
         this.data= dataModel;
-        this.setAutoCreateRowSorter(true);
     }
     @Override
+    /**
+     * Funzione che permette di visualizzare la formula quando la cella viene cliccata.
+     * Accedendo al RawData della cella specificata, viene renderizzata direttamente
+     * la stringa corrispondente alla formula, e non viene mostrato il valore numerico, 
+     * che può essere un intero o un messaggio di errore.
+     *
+     * @param row indice di riga;
+     * @param column indice di colonna;
+     * @param e evento;
+     * @return ans valore di ritorno della funzione della classe padre;
+     */
     public boolean editCellAt(int row, int column, EventObject e){
         boolean ans = super.editCellAt(row, column,e);
         if (ans){
@@ -30,8 +50,12 @@ public class MyJTable extends JTable
         return ans;
     }
     /**
-     * Metodo implementato per il toolTip quando si passa con il mouse
-     * su una cella. In caso di cella vuota, si ritorna null per non mostrare il tooltip.
+     * Metodo per implementare il tooltip.
+     * Grazie a questo metodo, quando l'utente passa con il mouse su una cella, può vedere il suo contenuto
+     * senza dover necessariamente cliccare su di essa.
+     * E' utile per mostrare i messaggi di errore all'interno delle celle contenenti formule.
+     * @param e il mouseEvent;
+     * @return tip stringa contenente il tooltip;
      * */
     public String getToolTipText(MouseEvent e)
     {

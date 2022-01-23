@@ -3,13 +3,23 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.Border;
-
+/**
+ * Pannello che contiene la finestra di log.
+ * Utile per mostrare messaggi di controllo, ad esempio
+ * per informare l'utente del salvataggio automatico effettuato.  
+ */
 public class BottomMenuPanel extends JPanel
 {
     /**
-     * TextField di log usata per mostrare messaggi generici di monitoraggio.
+     * TextField di log usato per mostrare messaggi generici di monitoraggio.
      */
     private JTextField log;
+    /**
+     * Costruttore della classe.
+     * Chiama il costruttore della classe padre.
+     * Viene impostato il BorderLayout.
+     * Viene creato un field di testo per i messaggi di monitoraggio.
+     */
     public BottomMenuPanel()
     {
         super();
@@ -19,7 +29,8 @@ public class BottomMenuPanel extends JPanel
         add(log, BorderLayout.WEST);
     }
     /**
-     * getter del log, i metodi delle altre classi devono poterlo modificare.
+     * Getter della finestra di log.
+     * Metodo usato per scrivere all'interno del JTextField.
      */
     public JTextField getLog(){return log;}
 }

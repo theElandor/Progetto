@@ -1,0 +1,7 @@
+<map id="DialogHandler" name="DialogHandler">
+<area shape="rect" id="node1" title=" " alt="" coords="95,80,210,107"/>
+<area shape="rect" id="node3" href="$classAutoSaver.html" title="Classe che gestisce il salvataggio automatico." alt="" coords="5,155,95,181"/>
+<area shape="rect" id="node4" href="$classLoader.html" title=" " alt="" coords="119,155,186,181"/>
+<area shape="rect" id="node5" href="$classSaver.html" title=" " alt="" coords="210,155,269,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="119,5,186,32"/>
+</map>

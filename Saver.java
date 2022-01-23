@@ -1,5 +1,6 @@
 import java.io.*;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JFileChooser;
 
 public class Saver extends DialogHandler
@@ -24,13 +25,15 @@ public class Saver extends DialogHandler
     {
         return model;
     }
-    public void save()
+    public boolean save()
     {
         // Quando la save viene chiamata per la prima volta, viene
         // creato il thread che chiama l'autosave ogni X secondi.
         try
         {
             JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter(".ser",".ser~");
+            chooser.setFileFilter(filter);
             chooser.showSaveDialog(null);
             path=chooser.getSelectedFile().getAbsolutePath()+".ser";
             File temp = new File(path);
@@ -38,13 +41,13 @@ public class Saver extends DialogHandler
             {
                 int n = JOptionPane.showConfirmDialog(null, "Il file "+path+" esiste già. Sovrascrivere il file?", "Conferma Salvataggio", JOptionPane.YES_NO_OPTION);
                 if(n == 1)
-                    return;
+                    return false;
             }
         }
         catch(NullPointerException e)
         {
             throwErrorDialog("Salvataggio annullato.");
-            return;
+            return false;
         }
         try
         {
@@ -54,6 +57,7 @@ public class Saver extends DialogHandler
         catch(Exception e)
         {
             throwErrorDialog("Errore in fase di salvataggio del file.");
+            return false;
         }
         try
         {
@@ -64,6 +68,7 @@ public class Saver extends DialogHandler
         {
             throwErrorDialog("Errore in fase di scrittura.");
             System.out.println(e);
+            return false;
         }
         try
         {
@@ -78,12 +83,17 @@ public class Saver extends DialogHandler
         model.setSaved(true);
         model.setCurrentSave(path);
         JOptionPane.showMessageDialog(null, "File salvato correttamente.", "MessageBox: " + "FileSavedCorrectly", JOptionPane.INFORMATION_MESSAGE);
+        return true;
     }
     /**
      * Se il file non e' ancora stato salvato allora
      * viene chiamato il metodo "save()". Altrimenti
      * viene sovrascritto il vecchio salvataggio, come
      * in excel.
+     * Backup viene passato come "true" se il metodo e' chiamato
+     * dall'autosaver, altrimenti e' false.
+     * In questo modo uso lo stesso metodo per due casistiche diverse,
+     * usando un parametro di supporto.
      * Se Backup e' false, allora la funzione sovrascrive il salvataggio
      * precedente. Se Backup e' true, allora la funzione crea un nuovo
      * file dal nome "model.getCurrentSave()+~". La funzione
@@ -91,15 +101,15 @@ public class Saver extends DialogHandler
      * ogni 30 secondi con il parametro Backup = true, in modo
      * da simulare un salvataggio automatico, utile in caso di crash.
      */
-    public void update_save(boolean Backup)
+    public boolean update_save(boolean Backup)
     {
         if(model.getSaved())
         {
-            if(!Backup) // se il metodo è chiamato dall'autoSaver, allora non devo chiedere conferma all'utente.
+            if(!Backup) // se il metodo e' chiamato dall'autoSaver, allora non devo chiedere conferma all'utente.
             {
                 int n = JOptionPane.showConfirmDialog(null, "Il file "+model.getCurrentSave()+" sta per essere sovrascritto. Continuare?", "Conferma Salvataggio", JOptionPane.YES_NO_OPTION);
                 if(n == 1)
-                    return;
+                    return false;
             }
             try
             {
@@ -117,12 +127,14 @@ public class Saver extends DialogHandler
             catch(IOException e)
             {
                 throwErrorDialog("Errore in fase di salvataggio.");
+                return false;
             }
             writeLog(model.getCurrentSave()+" salvato.");
+            return true;
         }
         else
         {
-            save();
+            return save();
         }
     }
 }
