@@ -2,6 +2,11 @@
 \label{classLoader}\index{Loader@{Loader}}
 
 
+Classe che gestisce il caricamento dei file di salvataggio.  
+
+
+
+
 Diagramma delle classi per Loader\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -22,12 +27,15 @@ Diagramma di collaborazione per Loader\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classLoader_aa106007991e538c536187f7fef0aeca0}{Loader}} (\mbox{\hyperlink{classMyTableModel}{My\+Table\+Model}} model, \mbox{\hyperlink{classBottomMenuPanel}{Bottom\+Menu\+Panel}} log\+Panel)
-\item 
+\begin{DoxyCompactList}\small\item\em Costruttore della classe. \end{DoxyCompactList}\item 
 boolean \mbox{\hyperlink{classLoader_a9df18eccee1c9962da13043275e905d8}{load}} ()
 \begin{DoxyCompactList}\small\item\em Metodo che svolge la funzionalita\textquotesingle{} principale della classe. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classLoader_aaf36db572ddc531a57090efee5b9452c}{get\+Extension}} (File file)
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Descrizione dettagliata}
+Classe che gestisce il caricamento dei file di salvataggio. 
 
 \doxysubsection{Documentazione dei costruttori e dei distruttori}
 \mbox{\Hypertarget{classLoader_aa106007991e538c536187f7fef0aeca0}\label{classLoader_aa106007991e538c536187f7fef0aeca0}} 
@@ -38,6 +46,17 @@ String \mbox{\hyperlink{classLoader_aaf36db572ddc531a57090efee5b9452c}{get\+Exte
 
 
 
+Costruttore della classe. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em model} & Il Table\+Model attualmente in uso, che verrà sovrascritto \\
+\hline
+{\em log\+Panel} & Il Pannello inferiore per mostrare messaggi di controllo \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Documentazione delle funzioni membro}
 \mbox{\Hypertarget{classLoader_aaf36db572ddc531a57090efee5b9452c}\label{classLoader_aaf36db572ddc531a57090efee5b9452c}} 
 \index{Loader@{Loader}!getExtension@{getExtension}}
@@ -45,6 +64,14 @@ String \mbox{\hyperlink{classLoader_aaf36db572ddc531a57090efee5b9452c}{get\+Exte
 \doxysubsubsection{\texorpdfstring{getExtension()}{getExtension()}}
 {\footnotesize\ttfamily String Loader.\+get\+Extension (\begin{DoxyParamCaption}\item[{File}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+\begin{DoxyParams}{Parametri}
+{\em file} & File caricato \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+Stringa corrispondente all\textquotesingle{}estensione del file 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classLoader_a9df18eccee1c9962da13043275e905d8}\label{classLoader_a9df18eccee1c9962da13043275e905d8}} 
 \index{Loader@{Loader}!load@{load}}
 \index{load@{load}!Loader@{Loader}}
@@ -55,7 +82,15 @@ String \mbox{\hyperlink{classLoader_aaf36db572ddc531a57090efee5b9452c}{get\+Exte
 
 Metodo che svolge la funzionalita\textquotesingle{} principale della classe. 
 
-Ritorna false se esce con errore, se invece il caricamento avviene correttamente ritorna true. 
+~\newline
+ Ritorna false se esce con errore, se invece il caricamento avviene correttamente ritorna true.~\newline
+ Fa uso di un J\+File\+Chooser per far scegliere all\textquotesingle{}utente il file da caricare, poi esegue i controlli sull\textquotesingle{}estensione.~\newline
+ Sono consentiti soltanto file con estensione .ser o -\/ser$\sim$.~\newline
+ Legge da file le due strutture dati fondamentali, cioè la tabella delle celle e la \mbox{\hyperlink{classValueTable}{Value\+Table}} contenente i valori numerici.~\newline
+ Se la lettura avviene con successo, le due strutture dati vengono inserite all\textquotesingle{}interno del Table\+Model.~\newline
+ Vengono poi salvate due informazioni\+: il path del salvataggio corrispondente alla corrente istanza della tabella, e un booleano che indica l\textquotesingle{}esistenza di questo salvataggio, per semplicità. In tal modo quando il \mbox{\hyperlink{classSaver}{Saver}} dovrà effettuare delle operazioni di salvataggio, dovrà soltanto leggere quella stringa.~\newline
+ Inoltre l\textquotesingle{}\mbox{\hyperlink{classAutoSaver}{Auto\+Saver}} effettuerà un salvataggio di backup soltanto se l\textquotesingle{}attuale istanza della tabella è già stata salvata.(Può facilmente ottenere questa informazione valutando se il booleano è True / False).~\newline
+ 
 
 La documentazione per questa classe è stata generata a partire dal seguente file\+:\begin{DoxyCompactItemize}
 \item 

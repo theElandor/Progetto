@@ -1,5 +1,5 @@
 <map id="Cell" name="Cell">
-<area shape="rect" id="node1" title=" " alt="" coords="37,171,83,197"/>
+<area shape="rect" id="node1" title="Classe che rappresenta la singola cella del foglio di calcolo." alt="" coords="37,171,83,197"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,104,32"/>
 <area shape="rect" id="node3" href="$classValueTable.html" title=" " alt="" coords="77,81,169,108"/>
 </map>

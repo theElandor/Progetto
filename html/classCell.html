@@ -69,14 +69,17 @@ $(function() {
 <div class="title">Riferimenti per la classe Cell</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe che rappresenta la singola cella del foglio di calcolo.  
+ <a href="classCell.html#details">Continua...</a></p>
 <div class="dynheader">
 Diagramma delle classi per Cell</div>
 <div class="dyncontent">
 <div class="center"><img src="classCell__inherit__graph.png" border="0" usemap="#Cell_inherit__map" alt="Inheritance graph"/></div>
 <map name="Cell_inherit__map" id="Cell_inherit__map">
-<area shape="rect" title=" " alt="" coords="85,80,132,107"/>
+<area shape="rect" title="Classe che rappresenta la singola cella del foglio di calcolo." alt="" coords="85,80,132,107"/>
 <area shape="rect" href="classFormulaCell.html" title=" " alt="" coords="5,155,105,181"/>
-<area shape="rect" href="classIntCell.html" title=" " alt="" coords="130,155,194,181"/>
+<area shape="rect" href="classIntCell.html" title="Classe figlia della classe Cell." alt="" coords="130,155,194,181"/>
 <area shape="rect" title=" " alt="" coords="59,5,158,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legenda</a>]</span></center></div>
@@ -85,7 +88,7 @@ Diagramma di collaborazione per Cell:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCell__coll__graph.png" border="0" usemap="#Cell_coll__map" alt="Collaboration graph"/></div>
 <map name="Cell_coll__map" id="Cell_coll__map">
-<area shape="rect" title=" " alt="" coords="37,171,83,197"/>
+<area shape="rect" title="Classe che rappresenta la singola cella del foglio di calcolo." alt="" coords="37,171,83,197"/>
 <area shape="rect" title=" " alt="" coords="5,5,104,32"/>
 <area shape="rect" href="classValueTable.html" title=" " alt="" coords="77,81,169,108"/>
 </map>
@@ -101,6 +104,7 @@ Membri pubblici</h2></td></tr>
 <tr class="memitem:a969d9b430531eaa3148926e7f66f2f03"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a969d9b430531eaa3148926e7f66f2f03">getRaw</a> ()</td></tr>
 <tr class="separator:a969d9b430531eaa3148926e7f66f2f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a802abdb2310eb507961e0acfef891ebb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a802abdb2310eb507961e0acfef891ebb">SpecializeCell</a> ()</td></tr>
+<tr class="memdesc:a802abdb2310eb507961e0acfef891ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoto che serve alla cella per potersi specializzare.  <a href="classCell.html#a802abdb2310eb507961e0acfef891ebb">Continua...</a><br /></td></tr>
 <tr class="separator:a802abdb2310eb507961e0acfef891ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57c740f1923c06807ec0bc9cfb31d9fc"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a57c740f1923c06807ec0bc9cfb31d9fc">getCharForNumber</a> (int i)</td></tr>
 <tr class="separator:a57c740f1923c06807ec0bc9cfb31d9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,7 +120,10 @@ Attributi protetti</h2></td></tr>
 <tr class="memitem:a8fe07f910b342a3a9ab8518465bcebf9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a8fe07f910b342a3a9ab8518465bcebf9">row</a></td></tr>
 <tr class="separator:a8fe07f910b342a3a9ab8518465bcebf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentazione dei costruttori e dei distruttori</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Classe che rappresenta la singola cella del foglio di calcolo. </p>
+<p>Si può specializzare in 3 diversi sottotipi: 1) Una semplice cella contenente una stringa. (<a class="el" href="classCell.html" title="Classe che rappresenta la singola cella del foglio di calcolo.">Cell</a>) 2) Una cella che contiene un valore intero. (<a class="el" href="classIntCell.html" title="Classe figlia della classe Cell.">IntCell</a>) 3) Una cella che contiene una formula aritmetica. (<a class="el" href="classFormulaCell.html">FormulaCell</a>) </p>
+</div><h2 class="groupheader">Documentazione dei costruttori e dei distruttori</h2>
 <a id="ac01c62177a9b28dc5611c2e03705b9f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac01c62177a9b28dc5611c2e03705b9f5">&#9670;&nbsp;</a></span>Cell()</h2>
 
@@ -243,7 +250,7 @@ Attributi protetti</h2></td></tr>
 <p>Nel caso delle celle generiche la funzione getRenderedValue ritorna semplicemente la stringa inserita dall'utente. </p>
 <dl class="section return"><dt>Restituisce</dt><dd></dd></dl>
 
-<p>Reimplementata in <a class="el" href="classFormulaCell.html#adc8f579baca0fab91524b428862cf5c7">FormulaCell</a>, e <a class="el" href="classIntCell.html#a3e0833b27398fe8b2ffca77f21f1570a">IntCell</a>.</p>
+<p>Reimplementata in <a class="el" href="classIntCell.html#a3e0833b27398fe8b2ffca77f21f1570a">IntCell</a>, e <a class="el" href="classFormulaCell.html#adc8f579baca0fab91524b428862cf5c7">FormulaCell</a>.</p>
 
 </div>
 </div>
@@ -294,6 +301,9 @@ Attributi protetti</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Metoto che serve alla cella per potersi specializzare. </p>
+<p>Se la stringa contenuta nella cella può essere convertita con successo a un valore intero, allora la cella può specializzarsi in una <a class="el" href="classIntCell.html" title="Classe figlia della classe Cell.">IntCell</a>. Se la stringa contenuta nella cella contiene un carattere "=" in prima posizione, allora verrà interpretata come una formula. In tal caso, la cella potrà specializzarsi in una <a class="el" href="classFormulaCell.html">FormulaCell</a>. I valori di ritorno servono al chiamante per poter allocare un oggetto del tipo adatto. </p>
 
 </div>
 </div>

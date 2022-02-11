@@ -1,6 +1,12 @@
 import java.io.Serializable;
 import javax.naming.event.ObjectChangeListener;
-
+/**
+ * Classe che rappresenta la singola cella del foglio di calcolo. Si può specializzare
+ * in 3 diversi sottotipi:
+ * 1) Una semplice cella contenente una stringa. (Cell)
+ * 2) Una cella che contiene un valore intero. (IntCell)
+ * 3) Una cella che contiene una formula aritmetica. (FormulaCell)
+ */
 public class Cell implements Serializable
 {
     protected String raw;
@@ -23,7 +29,14 @@ public class Cell implements Serializable
      */
     public String getRenderedValue(){return getRaw();} // di base ritorna semplicemente il valore della stringa
     public String getRaw() {return raw;}
-   public int SpecializeCell()
+    /**
+     * Metoto che serve alla cella per potersi specializzare. Se la stringa contenuta nella cella 
+     * può essere convertita con successo a un valore intero, allora la cella può specializzarsi in una IntCell.
+     * Se la stringa contenuta nella cella contiene un carattere "=" in prima posizione, allora verrà interpretata
+     * come una formula. In tal caso, la cella potrà specializzarsi in una FormulaCell.
+     * I valori di ritorno servono al chiamante per poter allocare un oggetto del tipo adatto.
+     */
+    public int SpecializeCell()
    {
        int return_value;
        try

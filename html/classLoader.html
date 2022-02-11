@@ -68,12 +68,15 @@ $(function() {
 <div class="title">Riferimenti per la classe Loader</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe che gestisce il caricamento dei file di salvataggio.  
+ <a href="classLoader.html#details">Continua...</a></p>
 <div class="dynheader">
 Diagramma delle classi per Loader</div>
 <div class="dyncontent">
 <div class="center"><img src="classLoader__inherit__graph.png" border="0" usemap="#Loader_inherit__map" alt="Inheritance graph"/></div>
 <map name="Loader_inherit__map" id="Loader_inherit__map">
-<area shape="rect" title=" " alt="" coords="29,155,96,181"/>
+<area shape="rect" title="Classe che gestisce il caricamento dei file di salvataggio." alt="" coords="29,155,96,181"/>
 <area shape="rect" href="classDialogHandler.html" title=" " alt="" coords="5,80,120,107"/>
 <area shape="rect" title=" " alt="" coords="29,5,96,32"/>
 </map>
@@ -83,7 +86,7 @@ Diagramma di collaborazione per Loader:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLoader__coll__graph.png" border="0" usemap="#Loader_coll__map" alt="Collaboration graph"/></div>
 <map name="Loader_coll__map" id="Loader_coll__map">
-<area shape="rect" title=" " alt="" coords="29,155,96,181"/>
+<area shape="rect" title="Classe che gestisce il caricamento dei file di salvataggio." alt="" coords="29,155,96,181"/>
 <area shape="rect" href="classDialogHandler.html" title=" " alt="" coords="5,80,120,107"/>
 <area shape="rect" title=" " alt="" coords="29,5,96,32"/>
 </map>
@@ -92,6 +95,7 @@ Diagramma di collaborazione per Loader:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Membri pubblici</h2></td></tr>
 <tr class="memitem:aa106007991e538c536187f7fef0aeca0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoader.html#aa106007991e538c536187f7fef0aeca0">Loader</a> (<a class="el" href="classMyTableModel.html">MyTableModel</a> model, <a class="el" href="classBottomMenuPanel.html">BottomMenuPanel</a> logPanel)</td></tr>
+<tr class="memdesc:aa106007991e538c536187f7fef0aeca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruttore della classe.  <a href="classLoader.html#aa106007991e538c536187f7fef0aeca0">Continua...</a><br /></td></tr>
 <tr class="separator:aa106007991e538c536187f7fef0aeca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9df18eccee1c9962da13043275e905d8"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoader.html#a9df18eccee1c9962da13043275e905d8">load</a> ()</td></tr>
 <tr class="memdesc:a9df18eccee1c9962da13043275e905d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo che svolge la funzionalita' principale della classe.  <a href="classLoader.html#a9df18eccee1c9962da13043275e905d8">Continua...</a><br /></td></tr>
@@ -106,7 +110,9 @@ Membri pubblici</h2></td></tr>
 <tr class="memitem:a75f9b4c1d16d421d248f9c8acf4d7135 inherit pub_methods_classDialogHandler"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDialogHandler.html#a75f9b4c1d16d421d248f9c8acf4d7135">writeLog</a> (String message)</td></tr>
 <tr class="separator:a75f9b4c1d16d421d248f9c8acf4d7135 inherit pub_methods_classDialogHandler"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentazione dei costruttori e dei distruttori</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Classe che gestisce il caricamento dei file di salvataggio. </p>
+</div><h2 class="groupheader">Documentazione dei costruttori e dei distruttori</h2>
 <a id="aa106007991e538c536187f7fef0aeca0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa106007991e538c536187f7fef0aeca0">&#9670;&nbsp;</a></span>Loader()</h2>
 
@@ -141,6 +147,15 @@ Membri pubblici</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Costruttore della classe. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">model</td><td>Il TableModel attualmente in uso, che verrà sovrascritto </td></tr>
+    <tr><td class="paramname">logPanel</td><td>Il Pannello inferiore per mostrare messaggi di controllo </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Documentazione delle funzioni membro</h2>
@@ -167,6 +182,13 @@ Membri pubblici</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>File caricato </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Stringa corrispondente all'estensione del file </dd></dl>
 
 </div>
 </div>
@@ -194,7 +216,15 @@ Membri pubblici</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Metodo che svolge la funzionalita' principale della classe. </p>
-<p>Ritorna false se esce con errore, se invece il caricamento avviene correttamente ritorna true. </p>
+<p><br  />
+ Ritorna false se esce con errore, se invece il caricamento avviene correttamente ritorna true.<br  />
+ Fa uso di un JFileChooser per far scegliere all'utente il file da caricare, poi esegue i controlli sull'estensione.<br  />
+ Sono consentiti soltanto file con estensione .ser o -ser~.<br  />
+ Legge da file le due strutture dati fondamentali, cioè la tabella delle celle e la <a class="el" href="classValueTable.html">ValueTable</a> contenente i valori numerici.<br  />
+ Se la lettura avviene con successo, le due strutture dati vengono inserite all'interno del TableModel.<br  />
+ Vengono poi salvate due informazioni: il path del salvataggio corrispondente alla corrente istanza della tabella, e un booleano che indica l'esistenza di questo salvataggio, per semplicità. In tal modo quando il <a class="el" href="classSaver.html">Saver</a> dovrà effettuare delle operazioni di salvataggio, dovrà soltanto leggere quella stringa.<br  />
+ Inoltre l'<a class="el" href="classAutoSaver.html" title="Classe che gestisce il salvataggio automatico.">AutoSaver</a> effettuerà un salvataggio di backup soltanto se l'attuale istanza della tabella è già stata salvata.(Può facilmente ottenere questa informazione valutando se il booleano è True / False).<br  />
+ </p>
 
 </div>
 </div>

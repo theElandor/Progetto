@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+/**
+ * Classe che implementa il menù.
+ */
 public class MainMenu extends JFrame //implements ActionListener
 {
     public MainMenu()
