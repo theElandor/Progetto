@@ -1,4 +1,4 @@
-<map id="AutoSaver" name="AutoSaver">
+<map id="SaveLoad.AutoSaver" name="SaveLoad.AutoSaver">
 <area shape="rect" id="node1" title="Classe che gestisce il salvataggio automatico." alt="" coords="18,155,107,181"/>
 <area shape="rect" id="node2" href="$classDialogHandler.html" title=" " alt="" coords="5,80,120,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="29,5,96,32"/>

@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['get_18',['get',['../classValueTable.html#a708de0b583c34c6929f73742670669b3',1,'ValueTable']]],
+  ['getbottommenupanel_19',['getBottomMenuPanel',['../classBigPanel.html#a2d1060bcb7dcff02a2642d7fb40b6dce',1,'BigPanel']]],
+  ['getcella_20',['getCella',['../classTabella.html#a36446972ebb793307e6102dc985ff508',1,'Tabella']]],
+  ['getcellat_21',['getCellAt',['../classMyTableModel.html#a8f1be3856eaecd38e014fe6e32d1a5ff',1,'MyTableModel']]],
+  ['getcellvalue_22',['getCellValue',['../classFormulaCell.html#ab70689e05b3766f920869c9ce39705b7',1,'FormulaCell']]],
+  ['getcharfornumber_23',['getCharForNumber',['../classCell.html#a57c740f1923c06807ec0bc9cfb31d9fc',1,'Cell']]],
+  ['getcols_24',['getCols',['../classTabella.html#a3a58b003012872f759c7e5eb9750a949',1,'Tabella']]],
+  ['getcolumncount_25',['getColumnCount',['../classMyTableModel.html#acc4765f71830a739005193c6fc56685b',1,'MyTableModel']]],
+  ['getcolumnname_26',['getColumnName',['../classMyTableModel.html#ac76b14b5e3893d71d526be07ff6e5610',1,'MyTableModel']]],
+  ['getcurrentsave_27',['getCurrentSave',['../classMyTableModel.html#a604190354eeaef884806d00847f641de',1,'MyTableModel']]],
+  ['getdatamodel_28',['getDataModel',['../classTablePanel.html#a9fcc7e9c3beea92d74098e192a11e160',1,'TablePanel']]],
+  ['getextension_29',['getExtension',['../classLoader.html#aaf36db572ddc531a57090efee5b9452c',1,'Loader']]],
+  ['getlog_30',['getLog',['../classBottomMenuPanel.html#a4d221649b2326b986dbf514dc8a5529c',1,'BottomMenuPanel']]],
+  ['getmodel_31',['getModel',['../classSaver.html#a09ad89a8c05b2b66e8d1d1df6137ab09',1,'Saver']]],
+  ['getraw_32',['getRaw',['../classCell.html#a969d9b430531eaa3148926e7f66f2f03',1,'Cell']]],
+  ['getrawdataat_33',['getRawDataAt',['../classMyTableModel.html#a12a5e5fa4334feefad035fe15f74144c',1,'MyTableModel']]],
+  ['getrenderedvalue_34',['getRenderedValue',['../classCell.html#af07c76134103e126dcbc4ffa4dd7eb5d',1,'Cell.getRenderedValue()'],['../classFormulaCell.html#adc8f579baca0fab91524b428862cf5c7',1,'FormulaCell.getRenderedValue()'],['../classIntCell.html#a3e0833b27398fe8b2ffca77f21f1570a',1,'IntCell.getRenderedValue()']]],
+  ['getrowcount_35',['getRowCount',['../classMyTableModel.html#a9d0f0745c7cc40b8e6e53cd67567099f',1,'MyTableModel']]],
+  ['getrows_36',['getRows',['../classTabella.html#a5c912a7703efb3fe084a49426c7e159e',1,'Tabella']]],
+  ['getsaved_37',['getSaved',['../classMyTableModel.html#aa5895959cb8962d750eb364635733660',1,'MyTableModel']]],
+  ['gettabella_38',['getTabella',['../classMyTableModel.html#a7261caa262bb0f6d4605600e7987fdea',1,'MyTableModel.getTabella()'],['../classTablePanel.html#ac4b0ffbe0f79d8769b0916fe50cfc4bb',1,'TablePanel.getTabella()']]],
+  ['gettablepanel_39',['getTablePanel',['../classBigPanel.html#a283cd792690db6e25e7df3f529b80436',1,'BigPanel']]],
+  ['gettooltiptext_40',['getToolTipText',['../classMyJTable.html#aec9d1c58a08916999cbe908b72d31580',1,'MyJTable']]],
+  ['getvalueat_41',['getValueAt',['../classMyTableModel.html#ad7c18c4c680aa8406d440e4e29682a82',1,'MyTableModel']]],
+  ['getvaluetable_42',['getValueTable',['../classMyTableModel.html#a8441d6ed0953fc22385a89a10036c6f6',1,'MyTableModel']]]
+];

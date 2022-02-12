@@ -1,4 +1,4 @@
-<map id="BottomMenuPanel" name="BottomMenuPanel">
+<map id="Graphics.BottomMenuPanel" name="Graphics.BottomMenuPanel">
 <area shape="rect" id="node1" title="Pannello che contiene la finestra di log." alt="" coords="5,80,147,107"/>
 <area shape="rect" id="node2" title=" " alt="" coords="45,5,107,32"/>
 </map>
