@@ -5,18 +5,22 @@ import javax.swing.*;
 import Menu.MainMenuListener;
 /**
  * Frame del foglio di calcolo, a cui e' associato un Menu' principale di scelta multipla.
- * Contiene un'oggetto di tipo Graphics.BigPanel.
- * A questa classe e' associato un WindowListener, in modo da poter lanciare la finestra di dialogo
- * che chiede all'utente conferma prima di uscire.
+ * Contiene un'oggetto di tipo Graphics.BigPanel.<br>
+ * A questa classe e' associato un WindowListener, in modo da poter lanciare la finestra di dialogo.<br>
+ * che chiede all'utente conferma prima di uscire.<br>
  */
 public class MyFrame extends JFrame
 {
     private BigPanel p;
     private MainMenuListener listener;
-    public MyFrame()
-    {
-        this("");
-    }
+    public MyFrame() {this("");}
+    /**
+     * Costruttore della classe.<br>
+     * Vengono aggiunti alla schermata principale tutti i componenti grafici necessari.<br>
+     * Viene creato il Listener del menù principale.<br>
+     * Viene fatto l'override del metodo WindowClosing, per lanciare una finestra di conferma 
+     * prima che il programma venga terminato.<br>
+     */ 
     public MyFrame(String titolo)
     {
         super(titolo);
@@ -33,23 +37,18 @@ public class MyFrame extends JFrame
         JMenuItem m13 = new JMenuItem("Carica");
 
         JMenu m1 = new JMenu("File");
-        //JMenu m2 = new JMenu("Modifica");
 
         m1.add(m11);
         m1.add(m12);
         m1.add(m13);
 
-        //m2.add(m21);
-
         JMenuBar mb = new JMenuBar();
         mb.add(m1);
-        //mb.add(m2);
 
         this.setJMenuBar(mb);
         m11.addActionListener(listener);
         m12.addActionListener(listener);
         m13.addActionListener(listener);
-        // m21.addActionListener(listener);
 
         this.add(p, BorderLayout.CENTER);
         this.addWindowListener(new java.awt.event.WindowAdapter() {

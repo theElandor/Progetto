@@ -9,8 +9,7 @@ import Graphics.DialogHandler;
 import Graphics.BottomMenuPanel;
 
 /**
- * Commento di prova del Saver.
- * 
+ * Classe che gestisce il salvataggio del foglio di calcolo.<br>
  */
 public class Saver extends DialogHandler
 {
@@ -18,26 +17,33 @@ public class Saver extends DialogHandler
     private ObjectOutputStream out;
     private MyTableModel model;
     private String path;
-
     /**
-     * Nel costruttore prendo anche il riferimento al bottom panel.
-     * In tal modo, usando l'espressione b.getLog().setText() si può
-     * settare il texField nello spazio apposito in basso a sinistra,
-     * corrispondente al menù di log.
+     * Costruttore della classe.<br>
+     * Viene chiamato il costruttore della superclasse e viene salvato il riferimento al model dal salvare.<br>
      */
     public Saver(MyTableModel model, BottomMenuPanel logPanel)
     {
         super(logPanel);
         this.model = model;
     }
-    public MyTableModel getModel()
-    {
-        return model;
-    }
+    /**
+     * Getter del model.
+     * @return model riferimento al parametro model.
+     */
+    public MyTableModel getModel() {return model;}
+    
+    /**
+     * Metodo che gestisce il salvataggio.<br>
+     * Viene usato un'oggetto di tipo JFileChooser per far scegliere all'utente il percorso
+     * in cui salvare il file. <br>
+     * Vengono fatti diversi controlli sullo stato di avanzamento del salvataggio, in modo da
+     * segnalare all'utente il tipo di errore che si è verificato.<br>
+     * Alla fine del salvataggio viene impostato l'attributo saved del modello a true, e viene
+     * anche salvato il path del salvataggio.<br>
+     * @return esito del salvataggio.
+     */
     public boolean save()
     {
-        // Quando la save viene chiamata per la prima volta, viene
-        // creato il thread che chiama l'autosave ogni X secondi.
         try
         {
             JFileChooser chooser = new JFileChooser();
@@ -95,20 +101,20 @@ public class Saver extends DialogHandler
         return true;
     }
     /**
-     * Se il file non e' ancora stato salvato allora
-     * viene chiamato il metodo "save()". Altrimenti
-     * viene sovrascritto il vecchio salvataggio, come
-     * in excel.
-     * Backup viene passato come "true" se il metodo e' chiamato
-     * dall'autosaver, altrimenti e' false.
+     * Classe che gestisce la funzione del menù "Salva" e il salvataggio automatico.<br>
+     * Se il file non e' ancora stato salvato allora viene chiamato il metodo save, altrimenti viene sovrascritto
+     * il vecchio salvataggio.<br>
+     * Backup viene passato come true se il metodo e' chiamato
+     * dall'autosaver, altrimenti false.<br>
      * In questo modo uso lo stesso metodo per due casistiche diverse,
-     * usando un parametro di supporto.
+     * usando un parametro di supporto.<br>
      * Se Backup e' false, allora la funzione sovrascrive il salvataggio
-     * precedente. Se Backup e' true, allora la funzione crea un nuovo
-     * file dal nome "model.getCurrentSave()+~". La funzione
+     * precedente.<br> Se Backup e' true, allora la funzione crea un nuovo
+     * file dal nome "model.getCurrentSave()+~".<br> La funzione
      * update_save viene chiamata automaticamente da un thread
-     * ogni 30 secondi con il parametro Backup = true, in modo
+     * ogni 30(10) secondi con il parametro Backup = true, in modo
      * da simulare un salvataggio automatico, utile in caso di crash.
+     * @return esito del salvataggio.
      */
     public boolean update_save(boolean Backup)
     {

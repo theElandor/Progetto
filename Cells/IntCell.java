@@ -24,8 +24,8 @@ public class IntCell extends Cell
         v.put(getCharForNumber(col)+(row+1), value);
     }
     /**
-     * Funzione che ritorna i dati da stampare sul foglio di calcolo. In questo
-     * caso si può semplicemente stampare il valore sotto forma di stringa.
+     * Funzione che ritorna i dati da stampare sul foglio di calcolo. <br>
+     * In questo caso si può semplicemente stampare il valore sotto forma di stringa.
      */
     @Override
     public String getRenderedValue()

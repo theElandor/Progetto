@@ -3,11 +3,11 @@ package Cells;
 import java.io.Serializable;
 
 /**
- * Classe che rappresenta la singola cella del foglio di calcolo. Si può specializzare <br>
- * in 3 diversi sottotipi: <br>
- * 1) Una semplice cella contenente una stringa. (Cells.Cell) <br>
- * 2) Una cella che contiene un valore intero. (Cells.IntCell) <br>
- * 3) Una cella che contiene una formula aritmetica. (Cells.FormulaCell) <br>
+ * Classe che rappresenta la singola cella del foglio di calcolo.<br>
+ * Si può specializzare in 3 diversi sottotipi: <br>
+ * 1) Una semplice cella contenente una stringa. (Cell) <br>
+ * 2) Una cella che contiene un valore intero. (IntCell) <br>
+ * 3) Una cella che contiene una formula aritmetica. (FormulaCell) <br>
  */
 public class Cell implements Serializable
 {
@@ -27,9 +27,9 @@ public class Cell implements Serializable
      * Nel caso delle celle generiche la funzione
      * getRenderedValue ritorna semplicemente 
      * la stringa inserita dall'utente. 
-     * @return
+     * @return valore della stringa.
      */
-    public String getRenderedValue(){return getRaw();} // di base ritorna semplicemente il valore della stringa
+    public String getRenderedValue(){return getRaw();}
     public String getRaw() {return raw;}
     /**
      * Metoto che serve alla cella per potersi specializzare. Se la stringa contenuta nella cella 
@@ -53,13 +53,21 @@ public class Cell implements Serializable
        }
        return return_value;
    }
+    /**
+     * Metodo che ritorna la stringa corrispondente ad un intero,
+     * basandosi sulla codifica ASCII.
+     * @param i valore intero.
+     * @return stringa corrispondente.
+     */
     public String getCharForNumber(int i) {return i > 0 && i < 27 ? String.valueOf((char)(i + 64)) : null;}
+    /**
+     * Metodo che resetta il valore di una cella all'interno della ValueTable.<br>
+     */
     public void resetValueInTable()
     {
         String col = getCharForNumber(this.col);// devo trasformarla
         String row = Integer.toString(this.row+1);
         String result = col+row;
-        System.out.println("Ho chiamato il metodo su "+result);
         v.remove(result);
     }
 }

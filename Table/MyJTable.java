@@ -42,7 +42,6 @@ public class MyJTable extends JTable
                 JTextField editor = (JTextField)getEditorComponent();
                 if(editor != null)
                 {
-                    System.out.println("DATA "+data.getRawDataAt(row,column+1));
                     editor.setText(data.getRawDataAt(row,column+1)); 
                 }
             } 

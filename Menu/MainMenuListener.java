@@ -27,7 +27,7 @@ public class MainMenuListener implements ActionListener
     /**
      * Metodo che si occupa della gestione dell'ActionEvent.<br>
      * In base al pulsante premuto, vengono invocati i metodi corrispondenti del Loader o del Saver.
-     * @param e Oggetto ActionEvent che corrisponde al tasto premuto.<br>
+     * @param e oggetto ActionEvent che corrisponde al tasto premuto.<br>
      */
     public void actionPerformed(ActionEvent e)
     {

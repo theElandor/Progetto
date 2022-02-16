@@ -1,3 +1,3 @@
 #! /bin/bash
-javac *.java
+find . | grep "^.*.java$"
 java Main

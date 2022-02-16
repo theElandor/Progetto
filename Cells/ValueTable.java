@@ -9,13 +9,14 @@ import java.util.*;
 @SuppressWarnings({"unsafe","unchecked"})
 public class ValueTable implements Serializable {
     private Map m;
-    public ValueTable() {
-        m = new HashMap<String, Integer>();
-    }
+    /**
+     * Costruttore della classe. Uso dei generics.<br>
+     * Viene allocata un HashMap che contiene chiavi di tipo stringa e valori interi.<br>
+     */
+    public ValueTable() {m = new HashMap<String, Integer>();}
     public void put(String key, Integer value)
     {
         m.put(key, value);
-        debug();
     }
     public Integer get(String key)
     {
@@ -24,13 +25,5 @@ public class ValueTable implements Serializable {
     public void remove(String key)
     {
         m.remove(key);
-    }
-    /**
-     * Funzione per stampare la hasmap formattata.*/
-    public void debug()
-    {
-        System.out.println("-------------");
-        m.entrySet().forEach(System.out::println);
-        System.out.println("-------------");
     }
 }
