@@ -1,9 +1,10 @@
 package Cells;
-
 import java.io.Serializable;
 import java.util.*;
 /***
- * Classe che incapsula una hash map.
+ * Classe che incapsula una Hash Map.<br>
+ * Serve a contenere valori numerici associati alle celle.<br>
+ * Le chiavi sono stringhe, ad esempio: "B3", mentre i valori sono interi.<br>
  */
 @SuppressWarnings({"unsafe","unchecked"})
 public class ValueTable implements Serializable {

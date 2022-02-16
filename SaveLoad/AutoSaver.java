@@ -11,8 +11,10 @@ public class AutoSaver extends DialogHandler {
     private BottomMenuPanel b;
     /**
      * Costruttore della classe.
-     * Chiama il costruttore della classe padre che vuole il logPanel come parametro.
+     * Chiama il costruttore della classe padre che prende il logPanel come parametro.
      * Tiene un riferimento al saver per usare i metodi che gestiscono il salvataggio.
+     * @param saver Oggeto Saver che si occupa della scrittura su file.
+     * @param logPanel Pannello situato nella parte inferiore della schermata che stampa dei messaggi di controllo.
      */
     public AutoSaver(Saver saver, BottomMenuPanel logPanel)
     {

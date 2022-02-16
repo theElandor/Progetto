@@ -3,11 +3,11 @@ package Cells;
 import java.io.Serializable;
 
 /**
- * Classe che rappresenta la singola cella del foglio di calcolo. Si può specializzare
- * in 3 diversi sottotipi:
- * 1) Una semplice cella contenente una stringa. (Cells.Cell)
- * 2) Una cella che contiene un valore intero. (Cells.IntCell)
- * 3) Una cella che contiene una formula aritmetica. (Cells.FormulaCell)
+ * Classe che rappresenta la singola cella del foglio di calcolo. Si può specializzare <br>
+ * in 3 diversi sottotipi: <br>
+ * 1) Una semplice cella contenente una stringa. (Cells.Cell) <br>
+ * 2) Una cella che contiene un valore intero. (Cells.IntCell) <br>
+ * 3) Una cella che contiene una formula aritmetica. (Cells.FormulaCell) <br>
  */
 public class Cell implements Serializable
 {
@@ -33,9 +33,9 @@ public class Cell implements Serializable
     public String getRaw() {return raw;}
     /**
      * Metoto che serve alla cella per potersi specializzare. Se la stringa contenuta nella cella 
-     * può essere convertita con successo a un valore intero, allora la cella può specializzarsi in una Cells.IntCell.
+     * può essere convertita con successo a un valore intero, allora la cella può specializzarsi in una Cells.IntCell.<br>
      * Se la stringa contenuta nella cella contiene un carattere "=" in prima posizione, allora verrà interpretata
-     * come una formula. In tal caso, la cella potrà specializzarsi in una Cells.FormulaCell.
+     * come una formula. In tal caso, la cella potrà specializzarsi in una Cells.FormulaCell.<br>
      * I valori di ritorno servono al chiamante per poter allocare un oggetto del tipo adatto.
      */
     public int SpecializeCell()

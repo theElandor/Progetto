@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['actionperformed_128',['actionPerformed',['../classMainMenuListener.html#ab063706bf69cc9bf7150dba5de75c176',1,'MainMenuListener']]],
-  ['addcellat_129',['AddCellAt',['../classTabella.html#a291ce98ae50af802a8e5e6f224daed8f',1,'Tabella']]],
-  ['autosaver_130',['AutoSaver',['../classAutoSaver.html#ad188d302f45bde46e807ffe6e29eaa69',1,'AutoSaver']]]
+  ['main_4',['main',['../classMain.html#a086d08b6d65c479abee84636d1c2ca95',1,'Main']]]
 ];

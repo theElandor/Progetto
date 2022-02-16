@@ -1,8 +1,7 @@
 package Cells;
 
 /**
- * Classe figlia della classe Cells.Cell.
- * Serve a gestire le celle che contengono dei valori interi.
+ * Classe che gestisce le celle contenenti valori interi.
  */
 public class IntCell extends Cell
 {

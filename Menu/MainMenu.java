@@ -1,7 +1,7 @@
 package Menu;
 import javax.swing.*;
 /**
- * Classe che implementa il menù.
+ * Classe che implementa il menù di selezione.
  */
 public class MainMenu extends JFrame //implements ActionListener
 {
@@ -9,6 +9,11 @@ public class MainMenu extends JFrame //implements ActionListener
     {
         this("");
     }
+    /**
+     * Costruttore della classe, crea tutti i pulsanti necessari per implementare
+     * un semplice menù di selezione.
+     * @param title Titolo della finestra da passare al costruttore del JFrame.<br>
+     */
     public MainMenu(String title)
     {
         super(title);

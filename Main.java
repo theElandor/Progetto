@@ -1,10 +1,8 @@
-package Main;
-
 import Graphics.MyFrame;
 
 /**
  * Classe che inizializza il programma.
- * Crea soltanto il frame, il resto si avvia di conseguenza.
+ * Crea il Frame e lo rende visibile, il resto si avvia automaticamente
  */
 public class Main
 {

@@ -7,6 +7,11 @@ import javax.swing.JFileChooser;
 import Table.*;
 import Graphics.DialogHandler;
 import Graphics.BottomMenuPanel;
+
+/**
+ * Commento di prova del Saver.
+ * 
+ */
 public class Saver extends DialogHandler
 {
     private FileOutputStream fileOut;

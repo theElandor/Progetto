@@ -15,7 +15,6 @@ public class MyJTable extends JTable
     /**
      * Semplice costruttore che chiama il metodo della classe padre, che necessita del dataModel 
      * come parametro. Per semplicità salvo il dataModel anche im un parametro locale.
-     *
      * @param dataModel
      */
     public MyJTable(MyTableModel dataModel)
