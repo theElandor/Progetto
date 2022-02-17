@@ -89,7 +89,8 @@ public class Loader extends DialogHandler
         model.setValueTable((ValueTable)hashMap);
         model.setSaved(true);
         model.setCurrentSave(selected.toString());
-        model.fireTableDataChanged();
+	writeLog(model.getCurrentSave());
+        model.fireTableDataChanged();	
         return true;
 
     }

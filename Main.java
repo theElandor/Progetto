@@ -8,7 +8,7 @@ public class Main
 {
     public static void main(String args[])
     {
-        MyFrame f = new MyFrame("Progetto");
+        MyFrame f = new MyFrame("Foglio di Calcolo");
         f.setVisible(true);
     }
 }

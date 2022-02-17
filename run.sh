@@ -1,3 +1,4 @@
 #! /bin/bash
-find . | grep "^.*.java$"
+find . | grep "^.*.java$" > files.txt
+javac @files.txt
 java Main

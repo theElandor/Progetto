@@ -40,11 +40,9 @@ public class AutoSaver extends DialogHandler {
                 saver.update_save(true);
                 writeLog("Sessione corrente salvata in un file di backup.");
                 try
-                {
-                    Thread.sleep(3000);
-                }
+                {Thread.sleep(3000);}
                 catch(InterruptedException e1){}
-                writeLog(" ");
+                writeLog(saver.getModel().getCurrentSave());
             }
         }
     }

@@ -1,8 +1,0 @@
-<map id="Grafico della gerarchia delle classi" name="Grafico della gerarchia delle classi">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,104,108"/>
-<area shape="rect" id="node2" href="$classCell.html" title="Classe che rappresenta la singola cella del foglio di calcolo." alt="" coords="175,31,221,57"/>
-<area shape="rect" id="node5" href="$classTabella.html" title="Matrice che contiene le celle." alt="" coords="164,81,232,108"/>
-<area shape="rect" id="node6" href="$classValueTable.html" title=" " alt="" coords="152,132,244,159"/>
-<area shape="rect" id="node3" href="$classFormulaCell.html" title=" " alt="" coords="292,5,392,32"/>
-<area shape="rect" id="node4" href="$classIntCell.html" title="Classe figlia della classe Cells.Cell." alt="" coords="310,56,374,83"/>
-</map>
