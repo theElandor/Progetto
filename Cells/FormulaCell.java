@@ -3,7 +3,7 @@ import java.lang.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
- * Classe che gestisce le celle contenenti formule.<br>
+ * Classe che gestisce le celle contenenti formule.
  * Per comodità sono stati definiti 3 attributi di tipo stringa, che rappresentano
  * gli errori stampabili all'interno della cella.
  */

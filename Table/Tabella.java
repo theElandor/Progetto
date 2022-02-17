@@ -3,7 +3,7 @@ import Cells.Cell;
 import java.io.Serializable;
 import java.util.*;
 /**
- * Classe che implementa una matrice di celle.<br>
+ * Classe che implementa una matrice di celle.
  * Classe che sta alla base della struttura del programma: contiene
  * una matrice di celle programmabili.<br>
  */

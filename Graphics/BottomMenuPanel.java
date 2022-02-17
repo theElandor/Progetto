@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 import java.awt.*;
 import javax.swing.*;
 /**
- * Pannello che contiene la finestra di log.<br>
+ * Pannello che contiene la finestra di log.
  * Utile per mostrare messaggi di controllo, ad esempio
  * per informare l'utente del salvataggio automatico effettuato.  
  */

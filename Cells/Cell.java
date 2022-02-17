@@ -1,9 +1,8 @@
 package Cells;
-
 import java.io.Serializable;
 
-/**
- * Classe che rappresenta la singola cella del foglio di calcolo.<br>
+/** 
+ * Classe che rappresenta la singola cella del foglio di calcolo.
  * Si può specializzare in 3 diversi sottotipi: <br>
  * 1) Una semplice cella contenente una stringa. (Cell) <br>
  * 2) Una cella che contiene un valore intero. (IntCell) <br>
@@ -24,15 +23,19 @@ public class Cell implements Serializable
         resetValueInTable();
     }
     /**
-     * Nel caso delle celle generiche la funzione
-     * getRenderedValue ritorna semplicemente 
-     * la stringa inserita dall'utente. 
+     * Metodo che ritorna una stringa o un intero in base al contenuto della cella.
+     * Nel caso delle celle generiche ritorna semplicemente la stringa inserita dall'utente. 
      * @return valore della stringa.
      */
     public String getRenderedValue(){return getRaw();}
+    /**
+     * Metodo che ritorna il dato contenuto nella cella sotto forma di stringa.
+     * @return raw dato sotto forma di stringa.
+     */
     public String getRaw() {return raw;}
     /**
-     * Metoto che serve alla cella per potersi specializzare. Se la stringa contenuta nella cella 
+     * Metoto che serve alla cella per potersi specializzare. 
+     * Se la stringa contenuta nella cella 
      * può essere convertita con successo a un valore intero, allora la cella può specializzarsi in una Cells.IntCell.<br>
      * Se la stringa contenuta nella cella contiene un carattere "=" in prima posizione, allora verrà interpretata
      * come una formula. In tal caso, la cella potrà specializzarsi in una Cells.FormulaCell.<br>

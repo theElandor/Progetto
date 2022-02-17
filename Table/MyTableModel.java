@@ -5,7 +5,7 @@ import Cells.IntCell;
 import Cells.ValueTable;
 import javax.swing.table.AbstractTableModel;
 /**
- * Classe che gestisce i dati all'interno della tabella.<br>
+ * Classe che gestisce i dati all'interno della tabella.
  * Contiene i riferimenti alle due strutture dati principali, ossia 
  * la Tabella (che contiene le celle) e la ValueTable ( HashMap che modella l'associazione cella-valore numerico)<br>
  * L'attributo saved indica se esiste o meno un salvataggio dell'attuale tabella.<br>
